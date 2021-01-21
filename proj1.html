@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Atli Freyr Hallbjörnsson</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <script>
+        $(document).ready(function(){
+        $('.next').on('click', function(){
+            var currentImg = $('.active');
+            var nextImg = currentImg.next();
+       
+            if(nextImg.length){
+                currentImg.removeClass('active').css('z-index', -10);
+                nextImg.addClass('active').css('z-index',10);
+            }
+        });
+            
+            $('.prev').on('click', function(){
+            var currentImg = $('.active');
+            var prevImg = currentImg.prev();
+       
+            if(prevImg.length){
+                currentImg.removeClass('active').css('z-index', -10);
+                prevImg.addClass('active').css('z-index',10);
+            }
+        });
+    });
+        </script>
+        <style>
+        .center {
+            margin: auto;
+            width: auto;
+            border: 0px solid #73AD21;
+            padding: 10px;
+            }
+</style>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+            text-align: center;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+        </style>
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        </style>
+        <style>
+            .slider-inner{
+                width:auto;
+                height:auto;
+                position:relative;
+                overflow:hidden;
+                float:left;
+                padding:3px;
+                border:#666 solid 0px;
+            }
+
+            .slider-inner img{
+                display:none;
+                width:auto;
+                height:auto;
+            }
+            
+            .slider-inner img.active{
+                display:inline-block;
+            }
+            
+            .prev,.next{
+                float:left;
+                margin-top:380px;
+                cursor: pointer;
+            }
+            
+            .prev{
+                position: relative;
+                margin-right: 0px;
+                z-index: 100;
+            }
+            
+            .next{
+                position: relative;
+                margin-left: 0px;
+                z-index: 100;
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Atli Freyr Hallbjörnsson</strong> </a>
+									<ul class="icons">
+                                        <li><a href="mailto:atli1902@gmail.com" class="icon brands fa-google"><span class="label">Gmail</span></a></li>
+                                        <li><a href="mailto:afh18@hi.is" class="icon brands fa-windows"><span class="label">Outlook</span></a></li>
+										<li><a href="https://twitter.com/atliatliatli" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://facebook.com/atlifryer" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://instagram.com/at.li" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="">
+									<div class="main" id="section1">
+										<header>
+											<h1 align="middle">Project 1 — Building my website</h1>
+                                        </header>
+									</div>
+								</section>
+                                <section id="banner">
+                                    <div class="center">
+                                        <img class="center-fit" src="images/webbuild.png" alt="" />
+                                    </div>
+                                </section>    
+
+							<!-- Section -->
+								<section>
+                                      
+									<div class="main">
+										<h2 align="middle" id="content">Project Description</h2>
+										<p align="justify">The objective of this first project of VÉL403G was to create a website using HTML. This website will be used for putting the rest of the projects that will be done in this course and also to put my resume on. Learning how to make my own website is very useful because I want to use this website for myself after I graduate in the spring. I've spent quite some time on this website to make it look as nice as possible and I've learned a lot about how HTML, JavaScript and CSS works, though mostly I've come to understand HTML better. </p>
+									</div>
+                                    <div class="main">
+										<h2 align="middle" id="content">Making the Website itself</h2>
+										<p align="justify">I have no prior experience using HTML except for sometimes seeing some snippets here and there when browsing the internet, so I decided to use a template called Editorial that you can see for yourselves <a href="https://https://html5up.net/editorial">here.</a> After looking at the examples given on Canvas of good websites I decided to download the application <a href="https://brackets.io">Brackets</a> for some extra help with the coding of the website. I also spent some time looking up how to make some fancier parts of the website, such as the image slider on the front page and the smooth scrolling when clicking on the "About me" section. I decided against having too many pages so the only real page apart from this one is the front page.</p>
+									</div>
+                                    <div class="main">
+										<h2 align="middle" id="content">Uploading the website</h2>
+										<p align="justify">Following the instructions given at </p>
+									</div>
+                                    
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+                                        <div class="main" id="section3">
+										<h2>Portfolio</h2>
+                                        </div>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="#" class="image"><img src="images/website.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Documentation</h3> </a>
+                                            <p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+                                            <a href="#"> <h3 align="middle">Project 2</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+                                            <a href="#"> <h3 align="middle">Project 3</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Project 4</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Project 5</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Project 6</h3> </a>
+											<p></p>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="#section2">About me</a></li>
+										<li><a href="#section3">VÉL403G</a></li>
+										<li><a href="images/AtliCV.pdf">Resume</a></li>
+									</ul>
+								</nav>
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>I'll get back to you as soon as possible!</p>
+									<ul class="contact">
+										<li class="icon brands fa-google"><a href="mailto:atli1902@gmail.com">atli1902@gmail.com</a></li>
+                                        <li class="icon brands fa-windows"><a href="mailto:afh18@hi.is">afh18@hi.is</a></li>
+										<li class="icon solid fa-phone">(+354) 823-6265</li>
+										<li class="icon solid fa-home">Sólvallagata 2, 101 Reykjavík</li>
+									</ul>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/jquery.scrollTo.js"></script>
+            <script src="assets/js/jquery.cycle.all.js"></script>
+	</body>
+</html>

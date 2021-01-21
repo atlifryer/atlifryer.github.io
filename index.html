@@ -1,1 +1,304 @@
-Hello World
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Atli Freyr Hallbjörnsson</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <script>
+        $(document).ready(function(){
+        $('.next').on('click', function(){
+            var currentImg = $('.active');
+            var nextImg = currentImg.next();
+       
+            if(nextImg.length){
+                currentImg.removeClass('active').css('z-index', -10);
+                nextImg.addClass('active').css('z-index',10);
+            }
+        });
+            
+            $('.prev').on('click', function(){
+            var currentImg = $('.active');
+            var prevImg = currentImg.prev();
+       
+            if(prevImg.length){
+                currentImg.removeClass('active').css('z-index', -10);
+                prevImg.addClass('active').css('z-index',10);
+            }
+        });
+    });
+        </script>
+        <style>
+        .center {
+            margin: auto;
+            width: auto;
+            border: 0px solid #73AD21;
+            padding: 10px;
+            }
+</style>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+            text-align: center;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+        </style>
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        </style>
+        <style>
+            .slider-inner{
+                width:auto;
+                height:auto;
+                position:relative;
+                overflow:hidden;
+                float:left;
+                padding:3px;
+                border:#666 solid 0px;
+            }
+
+            .slider-inner img{
+                display:none;
+                width:auto;
+                height:auto;
+            }
+            
+            .slider-inner img.active{
+                display:inline-block;
+            }
+            
+            .prev,.next{
+                float:left;
+                margin-top:380px;
+                cursor: pointer;
+            }
+            
+            .prev{
+                position: relative;
+                margin-right: 0px;
+                z-index: 100;
+            }
+            
+            .next{
+                position: relative;
+                margin-left: 0px;
+                z-index: 100;
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Atli Freyr Hallbjörnsson</strong> </a>
+									<ul class="icons">
+                                        <li><a href="mailto:atli1902@gmail.com" class="icon brands fa-google"><span class="label">Gmail</span></a></li>
+                                        <li><a href="mailto:afh18@hi.is" class="icon brands fa-windows"><span class="label">Outlook</span></a></li>
+										<li><a href="https://twitter.com/atliatliatli" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://facebook.com/atlifryer" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://instagram.com/at.li" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="">
+									<div class="main" id="section1">
+										<header>
+											<h1 align="middle">Welcome to my website</h1>
+											<p align="middle">On this website you can look up information about me, my projects for VÉL403G and more.</p>
+                                        </header>
+									</div>
+								</section>
+                                <section id="banner">
+                                    <div class="imgbox">
+                                        <img class="center-fit" src="images/pic17.JPG" alt="" />
+                                    </div>
+                                </section>    
+
+							<!-- Section -->
+								<section>
+                                    
+									<header class="major">
+                                        <div class="main" id="section2">
+										<h2>About me</h2>
+                                        </div>
+									</header>
+                                    <section id="banner">
+                                            <div class="center">
+                                            <div class="container">
+                                            <div class="slider-outer">
+                                            <img src="images/arrow-left.png" class="prev" alt="Prev">
+                                                <div class="slider-inner">
+                                                <img src="images/atli1.jpg" class="active">
+                                                <img src="images/atli2.jpg">
+                                                <img src="images/atli3.JPG">
+                                                <img src="images/pic14.jpg">
+                                                <img src="images/atli4.jpg">
+                                                <img src="images/atli5.png">    
+                                                <img src="images/atli1.jpg">
+                                                <img src="images/atli2.jpg">
+                                                <img src="images/atli3.JPG">
+                                                <img src="images/pic14.jpg">
+                                                <img src="images/atli4.jpg">
+                                                <img src="images/atli5.png">
+                                                <img src="images/atli1.jpg">
+                                                <img src="images/atli2.jpg">
+                                                <img src="images/atli3.JPG">
+                                                <img src="images/pic14.jpg">
+                                                <img src="images/atli4.jpg">
+                                                <img src="images/atli5.png">
+                                                </div>
+                                                <img src="images/arrow-right.png" class="next" alt="Next">
+                                            </div>
+                                            </div>
+                                            </div>
+                                        
+                                        <!-- <div class="imgbox">
+                                            <img class="center-fit" src="images/atli2.jpg" alt="" />
+                                        </div>
+                                        -->
+                                    </section>   
+									<div class="features">
+										<article>
+											<span class="icon solid fa-question"></span>
+											<div class="content">
+												<h3>Who is Atli Freyr?</h3>
+												<p align="justify">I'm a 20 year old student, I love to listen to all kinds of music and I like learning new useful things, such as building my own website!</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-code"></span>
+											<div class="content">
+												<h3>Experience with HTML</h3>
+												<p align="justify">This is my first time trying out HTML and it looks to be very interesting. I hope that I can become proficient at writing in HTML at the end of this course.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-calendar-alt"></span>
+											<div class="content">
+												<h3>University</h3>
+												<p align="justify">I am a student at the University of Iceland and have been since the fall of 2018. I aim to graduate with a Bachelor's degree in mechanical engineering in the spring of 2021.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-clock"></span>
+											<div class="content">
+												<h3>Future</h3>
+												<p align="justify"> I hope to be offered a job after graduation so I can get some experience in the field of engineering for a year or so before I join a postgraduate program. My resume can be found in the menu of this website or you can click <a href="#">here</a> to check it out.</p>
+											</div>
+										</article>
+									</div>
+                                    
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+                                        <div class="main" id="section3">
+										<h2>Portfolio</h2>
+                                        </div>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="proj1.html" class="image"><img src="images/website.png" alt="" /></a>
+											<a href="documentation.html"> <h3 align="middle">Project 1 — Building my website</h3> </a>
+                                            <p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+                                            <a href="#"> <h3 align="middle">Project 2 — Coming soon</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+                                            <a href="#"> <h3 align="middle">Project 3 — Coming soon</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Project 4 — Coming soon</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Project 5 — Coming soon</h3> </a>
+											<p></p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
+											<a href="#"> <h3 align="middle">Project 6+ — Coming soon</h3> </a>
+											<p></p>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="#section2">About me</a></li>
+										<li><a href="#section3">VÉL403G</a></li>
+										<li><a href="images/AtliCV.pdf">Resume</a></li>
+									</ul>
+								</nav>
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>I'll get back to you as soon as possible!</p>
+									<ul class="contact">
+										<li class="icon brands fa-google"><a href="mailto:atli1902@gmail.com">atli1902@gmail.com</a></li>
+                                        <li class="icon brands fa-windows"><a href="mailto:afh18@hi.is">afh18@hi.is</a></li>
+										<li class="icon solid fa-phone">(+354) 823-6265</li>
+										<li class="icon solid fa-home">Sólvallagata 2, 101 Reykjavík</li>
+									</ul>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/jquery.scrollTo.js"></script>
+            <script src="assets/js/jquery.cycle.all.js"></script>
+	</body>
+</html>
