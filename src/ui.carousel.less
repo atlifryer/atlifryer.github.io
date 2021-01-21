@@ -1,0 +1,178 @@
+@grayLight:       	#999999; // body copy 2
+.ui-carousel {
+	width: 100%;
+
+	.ui-carousel-content {
+		width: 100%;
+		overflow: hidden;
+		position: relative; // for arrow positioning
+	}
+
+	.ui-carousel-prev, .ui-carousel-next {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin: -.5em 0 0;
+		font-size: 170%;
+		width: 15%;
+		-webkit-transition: all .2s ease-in-out;
+		opacity: .75;
+		padding: 0;
+		line-height: 1em;
+		cursor:pointer;
+		height: 1em;
+		text-align: center;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		i {
+			color: @grayLight;
+			font-size: 1em;
+			width: 100%;
+			height: 1em;
+			margin: 0;
+			line-height: 1em;
+			padding: 0;
+		}
+
+		&.disabled {
+			visibility: hidden;
+		}
+	}
+
+	.ui-carousel-next {
+		left: auto;
+		right: 0;
+	}
+
+	.ui-carousel-items {
+		float: left;
+		width: 70%;
+		padding: 0;
+		margin: 0;
+		margin-left: 15%;
+
+		.ui-carousel-item {
+			width: 100%;
+			display: none;
+			text-align: center;
+			border:0;
+			margin: 0;
+			padding: 0;
+
+			&.ui-carousel-item-active {
+				display: block;
+			}
+		}
+	}
+
+	.ui-carousel-pageoftext {
+		clear: both;
+		margin-top: 20px;
+		text-align: center;
+		color: @grayLight;
+		font-size: 90%;
+	}
+
+}
+
+.ui-carousel-full-width {
+	.ui-carousel-controls {
+		width: 100%;
+		overflow: hidden;
+		margin-top: 20px;
+	}
+	.ui-carousel-prev, .ui-carousel-next {
+		position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		margin: 0;
+		float: left;
+	}
+
+	.ui-carousel-next {
+		float: right;
+	}
+
+	.ui-carousel-prev, .icon-arrow-left {
+		text-align: left;
+	}
+	.ui-carousel-next, .icon-arrow-right {
+		text-align: right;
+	}
+
+	.ui-carousel-items {
+		float: none;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		margin-left: 0;
+	}
+
+	.ui-carousel-pageoftext {
+		float: left;
+		clear: none;
+		margin-top: 0;
+		text-align: center;
+		color: @grayLight;
+		width: 70%;
+		line-height:1.8em;
+
+		span {
+			font-size: 90%;
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+  .ui-carousel-full-width {
+	  	position: relative;
+
+		.ui-carousel-prev, .ui-carousel-next {
+			float: none;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin: -1em 0 0;
+			text-align: center;
+		}
+
+		.ui-carousel-next {
+			float: none;
+			left: auto;
+			right: 0;
+		}
+
+		.ui-carousel-prev, .icon-arrow-left {
+			text-align: center;
+		}
+		.ui-carousel-next, .icon-arrow-right {
+			text-align: center;
+		}
+
+		.ui-carousel-items {
+			float: left;
+			width: 70%;
+			padding: 0;
+			margin: 0;
+			margin-left: 15%;
+		}
+
+		.ui-carousel-pageoftext {
+			float: none;
+			clear: both;
+			text-align: center;
+			color: @grayLight;
+			font-size: 90%;
+			width: 100%;
+
+			span {
+				font-size: 90%;
+			}
+		}
+	}
+}

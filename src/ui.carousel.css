@@ -1,0 +1,164 @@
+.ui-carousel {
+	width: 100%;
+}
+.ui-carousel .ui-carousel-content {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.ui-carousel .ui-carousel-content * {
+	max-width: 100%;
+}
+.ui-carousel .ui-carousel-prev,
+.ui-carousel .ui-carousel-next {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin: -1em 0 0;
+	font-size: 170%;
+	width: 15%;
+	-webkit-transition: all 0.2s ease-in-out;
+	opacity: .75;
+	padding: 0;
+	line-height: 2em;
+	cursor: pointer;
+	height: 2em;
+	text-align: center;
+}
+.ui-carousel .ui-carousel-prev:hover,
+.ui-carousel .ui-carousel-next:hover {
+	opacity: 1;
+}
+.ui-carousel .ui-carousel-prev i,
+.ui-carousel .ui-carousel-next i {
+	color: #999999;
+	font-size: 2em;
+	width: 100%;
+	height: 1em;
+	margin: 0;
+	line-height: 1em;
+	padding: 0;
+}
+.ui-carousel .ui-carousel-prev.disabled,
+.ui-carousel .ui-carousel-next.disabled {
+	visibility: hidden;
+}
+.ui-carousel .ui-carousel-next {
+	left: auto;
+	right: 0;
+}
+.ui-carousel .ui-carousel-items {
+	float: left;
+	width: 70%;
+	padding: 0;
+	margin: 0;
+	margin-left: 15%;
+}
+.ui-carousel .ui-carousel-items .ui-carousel-item {
+	width: 100%;
+	display: none;
+	text-align: center;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.ui-carousel .ui-carousel-items .ui-carousel-item.ui-carousel-item-active {
+	display: block;
+}
+.ui-carousel .ui-carousel-pageoftext {
+	clear: both;
+	margin-top: 20px;
+	text-align: center;
+	color: #999999;
+	font-size: 90%;
+}
+.ui-carousel-full-width .ui-carousel-controls {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.ui-carousel-full-width .ui-carousel-prev,
+.ui-carousel-full-width .ui-carousel-next {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	margin: 0;
+	float: left;
+}
+.ui-carousel-full-width .ui-carousel-next {
+	float: right;
+}
+.ui-carousel-full-width .ui-carousel-prev,
+.ui-carousel-full-width .icon-arrow-left {
+	text-align: left;
+}
+.ui-carousel-full-width .ui-carousel-next,
+.ui-carousel-full-width .icon-arrow-right {
+	text-align: right;
+}
+.ui-carousel-full-width .ui-carousel-items {
+	float: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	margin-left: 0;
+}
+.ui-carousel-full-width .ui-carousel-pageoftext {
+	float: left;
+	clear: none;
+	margin-top: 0;
+	text-align: center;
+	color: #999999;
+	width: 70%;
+	line-height: 1.8em;
+}
+.ui-carousel-full-width .ui-carousel-pageoftext span {
+	font-size: 90%;
+}
+@media screen and (orientation: landscape) {
+	.ui-carousel-full-width {
+		position: relative;
+	}
+	.ui-carousel-full-width .ui-carousel-prev,
+	.ui-carousel-full-width .ui-carousel-next {
+		float: none;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin: -1em 0 0;
+		text-align: center;
+	}
+	.ui-carousel-full-width .ui-carousel-next {
+		float: none;
+		left: auto;
+		right: 0;
+	}
+	.ui-carousel-full-width .ui-carousel-prev,
+	.ui-carousel-full-width .icon-arrow-left {
+		text-align: center;
+	}
+	.ui-carousel-full-width .ui-carousel-next,
+	.ui-carousel-full-width .icon-arrow-right {
+		text-align: center;
+	}
+	.ui-carousel-full-width .ui-carousel-items {
+		float: left;
+		width: 70%;
+		padding: 0;
+		margin: 0;
+		margin-left: 15%;
+	}
+	.ui-carousel-full-width .ui-carousel-pageoftext {
+		float: none;
+		clear: both;
+		text-align: center;
+		color: #999999;
+		font-size: 90%;
+		width: 100%;
+	}
+	.ui-carousel-full-width .ui-carousel-pageoftext span {
+		font-size: 90%;
+	}
+}

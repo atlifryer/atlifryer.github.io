@@ -4,6 +4,12 @@
 		<title>Atli Freyr Hallbjörnsson</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <style>
+            body { font-size: 16px; }
+        </style>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ionicons/1.5.2/css/ionicons.min.css" />
+        <link rel="stylesheet" href="src/ui.carousel.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link rel="icon" href="https://www.flaticon.com/svg/vstatic/svg/25/25297.svg?token=exp=1611249116~hmac=ba2ec5b9eb78959d72982cb853cb0555">
         <script
@@ -146,7 +152,39 @@
 										<h2>About me</h2>
                                         </div>
 									</header>
-                                    <section id="banner">
+                                    <section>
+                                        <div id="carousel-demo">     
+                                            <ul>
+                                            <li><img src="images/atli1.jpg"></li>
+                                            <li><img src="images/atli2.jpg"></li>
+                                            <li><img src="images/pic14.jpg"></li>
+                                            <li><img src="images/atli4.jpg"></li>
+                                            <li><img src="images/atli5.png"></li>
+                                            </ul>
+                                            </div>
+
+ 
+                                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+                                        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> 
+                                        <script src="src/ui.carousel.js" data-cover></script> 
+                                        <script>
+                                            (function($){
+                                                $('#carousel-demo').carousel();
+                                            }(jQuery));
+                                        </script>
+                                        <script type="text/javascript">
+                                        var _gaq = _gaq || [];
+                                        _gaq.push(['_setAccount', 'UA-36251023-1']);
+                                        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+
+                                        (function() {
+                                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-                                        analytics.com/ga.js';
+                                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                        })();
+
+                                        </script>
+                                        <!--
                                             <div class="center">
                                             <div class="container">
                                             <div class="slider-outer">
@@ -154,28 +192,15 @@
                                                 <div class="slider-inner">
                                                 <img src="images/atli1.jpg" class="active">
                                                 <img src="images/atli2.jpg">
-                                                <img src="images/atli3.JPG">
                                                 <img src="images/pic14.jpg">
                                                 <img src="images/atli4.jpg">
                                                 <img src="images/atli5.png">    
-                                                <img src="images/atli1.jpg">
-                                                <img src="images/atli2.jpg">
-                                                <img src="images/atli3.JPG">
-                                                <img src="images/pic14.jpg">
-                                                <img src="images/atli4.jpg">
-                                                <img src="images/atli5.png">
-                                                <img src="images/atli1.jpg">
-                                                <img src="images/atli2.jpg">
-                                                <img src="images/atli3.JPG">
-                                                <img src="images/pic14.jpg">
-                                                <img src="images/atli4.jpg">
-                                                <img src="images/atli5.png">
                                                 </div>
                                                 <img src="images/arrow-right.png" class="next" alt="Next">
                                             </div>
                                             </div>
                                             </div>
-                                        
+                                        --> 
                                         <!-- <div class="imgbox">
                                             <img class="center-fit" src="images/atli2.jpg" alt="" />
                                         </div>
