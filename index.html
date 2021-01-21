@@ -8,7 +8,12 @@
         <script
         src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="jquery.imgslider.js"></script>
+
         <script>
         $(document).ready(function(){
         $('.next').on('click', function(){
@@ -32,6 +37,38 @@
         });
     });
         </script>
+        <script>
+$(document).ready(function () {
+$("#demo").imgSlider({
+width: 500,
+height: 250,
+startAt: 0,
+delay: 8000,
+duration: 2500,
+cols: 1,
+rows: 1,
+nextEffect: "",
+prevEffect: "",
+easing: "",
+caption: {
+font: "sans-serif",
+color: "white",
+bgColor: "black",
+opacity: 0.65
+},
+backgroundColor: "transparent",
+buttons: {
+next: "&raquo;",
+prev: "&laquo;"
+},
+resizeImages: false,
+imgCropX: 50,
+imgCropY: 50,
+showCaption: true,
+showButtons: true
+});
+});
+</script>
         <style>
         .center {
             margin: auto;
@@ -84,7 +121,7 @@
             
             .prev,.next{
                 float:left;
-                margin-top:380px;
+                margin-top:300px;
                 cursor: pointer;
             }
             
@@ -132,7 +169,7 @@
 									</div>
 								</section>
                                 <section id="banner">
-                                    <div class="imgbox">
+                                    <div class="center">
                                         <img class="center-fit" src="images/pic17.JPG" alt="" />
                                     </div>
                                 </section>    
@@ -147,7 +184,16 @@
 									</header>
                                     <section id="banner">
                                             <div class="center">
-                                            <div class="container">
+                                            <div id="demo">
+                                                <img src="images/atli1.jpg" alt="Caption 1">
+                                                <img src="images/atli2.jpg">
+                                                <img src="images/atli3.JPG">
+                                                <img src="images/pic14.jpg">
+                                                <img src="images/atli4.jpg">
+                                                <img src="images/atli5.png">
+                                            </div>
+                                                <!--
+                                                <div class="container">
                                             <div class="slider-outer">
                                             <img src="images/arrow-left.png" class="prev" alt="Prev">
                                                 <div class="slider-inner">
