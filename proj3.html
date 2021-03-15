@@ -2,10 +2,19 @@
 <html>
 	<head>
 		<title>Verkefni 3</title>
-		<meta charset="utf-8" />
+        <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <style>
+            body { font-size: 16px; }
+        </style>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ionicons/1.5.2/css/ionicons.min.css" />
+        <link rel="stylesheet" href="src/ui.carousel.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link rel="icon" href="https://www.flaticon.com/svg/vstatic/svg/25/25297.svg?token=exp=1611249116~hmac=ba2ec5b9eb78959d72982cb853cb0555">
+        <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="square1.css" />
+
         <script
         src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -40,10 +49,51 @@
         </style>
         <style>
             .resize {
-                max-width: 65%;
-                max-height: 65%;
+                max-width: 50%;
+                max-height: 50%;
             }
         </style>
+        <style>
+        .center {
+            margin: auto;
+            width: auto;
+            border: 0px solid #73AD21;
+            padding: 10px;
+            }
+</style>
+        
+        
+        
+        
+        <style>
+  h1,h2 { text-align: center; }
+  .container { margin: 200px auto; }
+  [class*="slideshow"] {
+  max-width: 800px;
+  max-height: 600px;
+  margin: 0 auto 20px;
+  outline: none;
+}
+
+[class*="slideshow"] img {
+  display:none;
+}
+.image_wrapper .text_content {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0,0,0,.5);
+  opacity: 1;
+}
+
+.text_content * {
+  margin: .1em 0;
+}
+</style>
+        
+        
+        
         <style>
         .center {
             margin: auto;
@@ -96,7 +146,7 @@
             
             .prev,.next{
                 float:left;
-                margin-top:380px;
+                margin-top:300px;
                 cursor: pointer;
             }
             
@@ -151,35 +201,67 @@
 								<section>
                                       
 									<div class="main">
-										<h2 align="middle" id="content">Verkefnalýsing</h2>
+										<h1 align="middle" id="content">Verkefnalýsing</h1>
                                         <p align="justify"> <font size="4"> Markmið verkefnis 3 í VÉL403G var að hanna módel fyrir 3D prentun sem ekki væri hægt að framkvæma með frádráttar framleiðslu og að prenta hlutinn. Annar partur af verkefninu var að 3D skanna einhvern hlut, t.d. með photogrammetríu. </font></p>
 									</div>
                                     <div class="main">
-										<h2 align="middle" id="content">Stóllinn</h2>
-                                        <p align="justify"> <font size="4">Ég leitaði lengi og vel eftir einhvers konar innblástri á netinu og ákvað ég að leita eftir einhvers konar hleðslugúbbum fyrir Apple Watch. Meðal annars fann ég svona stóla sem voru með pláss fyrir hleðslutækinu þannig að maður gæti látið úrið í hleðslu á stólnum. Þetta fannst mér ansi flott og ég teiknaði upp stól fyrir mitt úr. Fyrsta gerð af stólnum var svona:</font></p>
+										<h1 align="middle" id="content">3D Prentun</h1>
+                                    </div>
+                                    <div class="main">
+										<h2 align="middle" id="content">Hleðslustóllinn</h2>
+                                        <p align="justify"> <font size="4">Ég leitaði lengi og vel eftir einhvers konar innblástri á netinu og ákvað ég að leita eftir einhvers konar hleðslugúbbum fyrir Apple Watch. Meðal annars fann ég svona stóla sem voru með pláss fyrir hleðslutækinu þannig að maður gæti látið úrið í hleðslu á stólnum. Þetta fannst mér ansi flott og ég teiknaði upp stól fyrir mitt úr. Fyrsta gerð af stólnum leit svona út:</font></p>
                                      <div class="img-container">
                                         <img class="center-fit" src="images/stoll1.0.png" alt="Fyrsta tegund af stólnum" />
                                     </div>
-                                        <p><font size="4">Ég hins vegar var ekki nógu varkár í mælingum mínum og þegar stóllinn var prentaður út var ekki nógu mikið pláss fyrir hleðslusnúruna þannig að hleðslutækið passaði engan veginn í stólinn. Aftur á móti gekk 3D prentunin mjög vel en mig langaði mikið að gera þetta rétt, þannig að ég lagaði mælingarnar til og prentaði stólinn aftur út. Fyrri gerðin af stólnum leit svona út 3D prentuð:</font></p>
+                                        <p align="justify"><font size="4">Ég hins vegar var ekki nógu varkár í mælingum mínum og þegar stóllinn var prentaður út var ekki nógu mikið pláss fyrir hleðslusnúruna þannig að hleðslutækið passaði engan veginn í stólinn. Aftur á móti gekk 3D prentunin mjög vel en mig langaði mikið að gera þetta rétt, þannig að ég lagaði mælingarnar til og prentaði stólinn aftur út. Fyrri gerðin af stólnum leit svona út 3D prentuð:</font></p>
                                         <div class="img-container">
                                         <img class="center-fit" src="images/stoll1.0Prentadur.png" alt="Verri tegundin eftir prentun" />
                                     </div>
-                                        <p><font size="4">Seinni gerðin af stólnum leit svona út í Inventor: </font></p>
+                                        <p align="justify"><font size="4">Ég ákvað eftir þetta að byrja upp á nýtt og lagfæra mælingar stólsins. Ég byrjaði á því að opna Fusion og ýtti fyrst á <em>"Create Sketch"</em>. Þar teiknaði ég 54mm x 44mm kassa og ýtti svo á extrude upp 60mm. Eftir það skar ég út neðri 50mm og bætti við 4 fótum  í öll horn sem voru 8mm x 8mm að þykkt. Svo extrude-aði ég upp bakinu á stólnum en bakið er 50mm að hæð. Svo skar ég út fjóra rétthyrninga í bakið til þess að gera hann fínni og til þess að þurfa að nota minna plast við prentunina. Eftir það þurfti smá fikt við extrude-ið á hringnum fyrir hleðslutækið en sem betur fer var ég með reynslu eftir fyrstu gerð stólsins. Hér fyrir neðan eru svo myndir af því hvernig stóllinn leit út eftir hvert skref:</font></p>
                                         <div class="img-container">
-                                        <img class="center-fit" src="images/stollFraman2.png" alt="Betri tegundin í Inventor"/>
+                                        <img class="center-fit" src="images/skref1.png" />
+                                        <img class="center-fit" src="images/skref2.png" />
+                                        <img class="center-fit" src="images/skref3.png" />
+                                        <img class="center-fit" src="images/skref4.png" />
+                                        <img class="center-fit" src="images/skref5.png" />
+                                        <img class="center-fit" src="images/skref6.png" />
+                                        <img class="center-fit" src="images/skref7.png" />
+                                        <img class="center-fit" src="images/skref8.png" />
+                                        <img class="center-fit" src="images/skref9.png" />
+                                        <img class="center-fit" src="images/skref10.png" />
+                                    </div>
+                                        <p align="justify"><font size="4">Ég passaði mig að laga til mælingarnar svo það væri alveg örugglega pláss til þess að setja hleðslusnúruna í gegn þannig að hringlaga parturinn af snúrunni kæmist í stólinn. Það sést að það er smá munur á fillet-inu líka, en það var bara til gamans til þess að sjá hver munurinn yrði. Það var ekkert mjög mikill munur á því að breyta fillet-inu en þessi seinni stóll svínvirkaði fyrir hleðslutækið og ég gat troðið því inn eins og sést aðeins neðar á síðunni.</font></p>
+                                        
+                                       <div class="main">
+										<h2 align="middle" id="content">Prentun</h2>
+                                        <p align="justify"> <font size="4">Eftir að hafa klárað að teikna upp stólinn aftur í réttum mælingum kom að prentun. Ég byrjaði á því að vista stólinn sem .stl file, setja inn á Ultimaker Cura forritið og ákveða stillingar fyrir prentarann sem ég og hópurinn völdu (Ultimaker 3). Svo setti ég fileinn yfir á USB-lykil sem var í boði í FabLab og tengdi lykilinn við prentarann og ýtti á print. Lokaútkoman var helvíti flott og gekk stóllinn eins og í lygasögu. Núna fær úrið sér alltaf smá pásu á daginn þegar það þarf að fara í hleðslu eins og sést á myndunum hér fyrir neðan:</font></p>
+                                           <div class="img-container">
+                                        <img class="center-fit" src="images/hledsluStollNalaegt.png" alt="Tegund 2 prentuð út"/>
                                         </div>
-                                        <p><font size="4">Ég passaði mig að laga til mælingarnar svo það væri alveg örugglega pláss til þess að setja hleðslusnúruna í gegn þannig að hringlaga parturinn af snúrunni kæmist í stólinn. Það sést að það er smá munur á fillet-inu líka, en það var bara til gamans til þess að sjá hver munurinn yrði.</font></p>
-									</div>
+                                           <div class="img-container">
+                                                <img class="center-fit" src="images/hledsluStollBak.png" />
+                                           </div>
+                                           <div class="img-container">
+                                                <img class="center-fit" src="images/hledsluStoll.png" />
+                                           </div>
+                                           <div class="img-container">
+                                                <img class="center-fit" src="images/hledsluStoll2.png" />
+                                           </div>
+                                        </div>
+                                        </div>
                                     <div class="main">
-										<h2 align="middle" id="content">Meira kemur seinna</h2>
-										<p align="justify"><font size="4">bla bla bla bla bla
-                                            </font></p>
+										<h1 align="middle" id="content">3D Skönnun</h1>
+                                        <p align="justify"> <font size="4">Eftir að hafa eytt miklum tíma í stólagerð og 3D prentun fólst næsti hluti verkefnisins í því að 3D skanna eitthvað. Ég ákvað að nota forritið Qlone í símanum mínum. Fyrst þurfti maður að prenta út svona smá mynstur á blað og setja svo hlutinn sem átti að skanna ofan á blaðið. Eftir það þurfti maður einfaldlega að fara eftir leiðbeiningum forritsins og taka upp hlutinn hægt og rólega frá öllum sjónarhornum. Þetta kom ágætlega út og það var skemmtilegt að prófa sig áfram í þessu. Myndirnar að neðan sýna hvernig ferlið fór fram og svo að lokum sést GIF sem sýnir lokaútkomuna:</font></p>
                                         <div class="img-container">
-                                        <img class="center-fit" src="images/atli1.jpg" alt="Ég nettur" />
-                                        </div>
-                                        <p><font size="4">bla bla blab lab labl balb lab lab lablab lab</font></p>
-									</div>
-                                    
+                                        <img class="center-fit" src="images/ps5scan.PNG" />
+                                        <img class="center-fit" src="images/ps5scan2.PNG" />
+                                        <img class="center-fit" src="images/ps5render.PNG" />
+                                        <img class="center-fit" src="images/ps5render2.PNG" />
+                                        <img class="center-fit" src="images/ps5render3.PNG" />
+                                        <img class="center-fit" src="images/ps5.gif" />
+                                            <img class="center-fit" src="images/ps5v2.gif" />
+                                    </div>
+                                    </div>
 								</section>
 
 							<!-- Section -->
@@ -193,32 +275,32 @@
 										<article>
 											<a href="proj1.html" class="image"><img src="images/website.png" alt="" /></a>
                                             <a href="proj1.html"> <h3 align="middle"><font size="5">Verkefni 1 —Að búa til heimasíðu með skilaverkefnum</font></h3> </a>
-                                            <p></p>
+                                            <p align="justify"></p>
 										</article>
 										<article>
 											<a href="proj2.html" class="image"><img src="images/kotturNalaegt.png" alt="" /></a>
                                             <a href="proj2.html"> <h3 align="middle"><font size="5">Verkefni 2 — Tölvustuddur skurður</font></h3> </a>
-											<p></p>
+											<p align="justify"></p>
 										</article>
 										<article>
-											<a href="proj3.html" class="image"><img src="images/stollFraman.png" alt="" /></a>
-                                            <a href="proj3.html"> <h3 align="middle"><font size="5">Verkefni 3 — 3D prentun og 3D skönnun</font></h3> </a>
-											<p></p>
+											<a href="#" class="image"><img src="images/stollFraman.png" alt="" /></a>
+                                            <a href="#"> <h3 align="middle"><font size="5">Verkefni 3 — 3D prentun og 3D skönnun</font></h3> </a>
+											<p align="justify"></p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
 											<a href="#"> <h3 align="middle"><font size="5">Verkefni 4 — Í vinnslu</font></h3> </a>
-											<p></p>
+											<p align="justify"></p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
 											<a href="#"> <h3 align="middle"><font size="5">Verkefni 5 — Í vinnslu</font></h3> </a>
-											<p></p>
+											<p align="justify"></p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/wip.png" alt="" /></a>
 											<a href="#"> <h3 align="middle"><font size="5">Verkefni 6+ — Í vinnslu</font></h3> </a>
-											<p></p>
+											<p align="justify"></p>
 										</article>
 									</div>
 								</section>
@@ -247,7 +329,7 @@
 									<header class="major">
 										<h2>Hafðu samband</h2>
 									</header>
-                                    <p>Ég svara þér eins fljótt og auðið er!</p>
+                                    <p align="justify">Ég svara þér eins fljótt og auðið er!</p>
 									<ul class="contact">
                                         <li class="icon brands fa-google"><a href="mailto:atli1902@gmail.com">atli1902@gmail.com</a></li>
                                         <li class="icon brands fa-windows"><a href="mailto:afh18@hi.is">afh18@hi.is</a></li>

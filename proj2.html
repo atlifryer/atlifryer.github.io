@@ -2,8 +2,8 @@
 <html>
 	<html>
 	<head>
-		<title>Verkefni 2</title>
-		<meta charset="utf-8" />
+		<title>Verkefni 3</title>
+        <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
         <style>
@@ -15,6 +15,11 @@
         <link rel="icon" href="https://www.flaticon.com/svg/vstatic/svg/25/25297.svg?token=exp=1611249116~hmac=ba2ec5b9eb78959d72982cb853cb0555">
         <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="square1.css" />
+        
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="icon" href="https://www.flaticon.com/svg/vstatic/svg/25/25297.svg?token=exp=1611249116~hmac=ba2ec5b9eb78959d72982cb853cb0555">
         <script
         src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -42,6 +47,25 @@
         });
     });
         </script>
+        <style>
+            .img-container {
+                text-align: center;
+            }
+        </style>
+        <style>
+            .resize {
+                max-width: 65%;
+                max-height: 65%;
+            }
+        </style>
+        <style>
+        .center {
+            margin: auto;
+            width: auto;
+            border: 0px solid #73AD21;
+            padding: 10px;
+            }
+</style>
         <style>
   h1,h2 { text-align: center; }
   .container { margin: 150px auto; }
@@ -121,6 +145,66 @@
             .prev,.next{
                 float:left;
                 margin-top:300px;
+                cursor: pointer;
+            }
+            
+            .prev{
+                position: relative;
+                margin-right: 0px;
+                z-index: 100;
+            }
+            
+            .next{
+                position: relative;
+                margin-left: 0px;
+                z-index: 100;
+            }
+        </style>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+            text-align: center;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+        </style>
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        </style>
+        <style>
+            .slider-inner{
+                width:auto;
+                height:auto;
+                position:relative;
+                overflow:hidden;
+                float:left;
+                padding:3px;
+                border:#666 solid 0px;
+            }
+
+            .slider-inner img{
+                display:none;
+                width:auto;
+                height:auto;
+            }
+            
+            .slider-inner img.active{
+                display:inline-block;
+            }
+            
+            .prev,.next{
+                float:left;
+                margin-top:380px;
                 cursor: pointer;
             }
             
