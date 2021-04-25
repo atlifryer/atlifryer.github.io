@@ -282,8 +282,23 @@
                                         <p align="justify"><font size="4">Eftir að hafa teiknað upp þessa tvo "regnboga" með mismunandi stórum hálfhringum skorna út úr hverjum voru skorin út pláss fyrir lítinn rétthyrning sem myndi þá festa hvorn regnboga saman. Vínstandurinn leit að lokum svona út í Fusion: <div class="img-container">
                                         <img class="center-fit" src="images/vinstandur.png" />
                                         </div></font></p>
-                                        
-                                         <p align="justify"><font size="4">Nú var haldið til Fablab í Breiðholti þar sem við fengum aðstoð frá Hafliða við að nota fræsivélina rétt og varlega. Mynda sliderinn sýnir svo ferlið eins og það átti sér stað en við fórum fyrst í forritið VCarve þar sem við löguðum til teikninguna og gerðum <em>toolpath</em> samkvæmt <a href="https://youtu.be/wGDx5PD0nTc">þessu myndbandi</a>. Eftir það settum við vélina upp sakvæmt leiðbeiningum Hafliða og settum hana í gang. Þá kom út lokaniðurstaðan sem sést á seinustu myndinni á slideshowinu en eftir smá púss með þjölum passaði rétthyrningurinn loks á milli hvers stands og þetta var sett saman. Lokaniðurstaðan leit alveg stórkostlega út og standurinn virkar eins og í sögu.</font></p>
+                                        <p align="justify"><font size="4">Til þess að fræsa vínstandinn út þurfti að fylgja nokkrum skrefum. Byrjað var á því að fletja hlutinn út í Fusion 360 og útflatningurinn vistaður sem DXF skjal. Í kjölfarið var skjalið flutt yfir í VCarve, sem bæði má nálgast í tölvubúnaðinum í Fablab, en inni á <a href="https://flr.is">flr.is</a> er einnig hægt sækja kóða til þess að ná í forritið á eigin tölvu. Inni í VCarve var unnið með 1500 x 1500 mm svæði, svo var efnisþykktin 21 mm notuð í þessu verkefni. Til þess að færa DXF skrána inn í VCarve var smellt á <b>Import vectors</b>, undir <b>File opreations</b>, og síðan var viðeigandi skrá valin. Öllum vectorunum var raðað snyrtilega upp inni á vinnusvæðinu svo að þeir passi og skarist ekki á. Passa þurfti að nota <b>Fillet</b> skipunina til þess að lagfæra hvöss horn. Ef það reynist erfitt að lagfæra hvössu hornin þá gæti þurft að velja þær línur mynda hornið, hægrismella, og smella á <b>Join vectors</b>. Þá ætti að vera hægt að nota Fillet skipunina án vandræða. <br>
+                                            <br>Næst átti að stilla <b>Drilling toolpath:</b><br>
+                                            Cut depth: 1 mm<br>
+                                            6 mm biti undir <b>Metric tools</b> <br>
+                                            Speed: 10500 RPM<br>
+                                            Unit: mm/min<br>
+                                            Feed: rate 70 mm/sek<br>
+                                            Plunge rate: 50 mm/sek<br><br>
+                                            Markmiðið er að <b>Chip Load</b> sé um 0,2 mm - 0,02 mm, en miðað við ofangreindar stillingar er gildið okkar 0,2 mm sem er einmitt innan þessara marka.
+                                            <br><br>
+                                            Næst voru allir hlutirnir valdir inni í <b>2D view</b> og til hægri, undir <b>Toolpath</b>, var <b>Profile Toolpath</b> valið fyrir fræsinguna og: <br>
+                                            Cut depth: 21.3 mm (gert aðeins meira en efnisþykktin til að þetta fari örugglega í gegn)<br>
+                                            Machine vectors: Outside/right<br>
+                                            <br>Að lokum voru svo 4-5 <b>tabs</b> komið fyrir á hvern hlut. Undir <b>Preview toolpaths</b> var svo hægt að sjá hvernig hluturinn lítur út. Svo er hluturinn færður yfir í fræsivélina með USB lykli.<br>
+                                            <br>Þegar komið var í fræsivélina var ágætis byrjun að bora plötuna á sinn stað með nokkrum skrúfum, áður en núllpunktur var valinn vel og vandlega. Þegar búið var að passa upp á allar stillingar og gera grein fyrir öryggisatriðum, var ekkert eftir nema að ýta á <b>Start</b>. Þá var setið yfir fræsivélinni á meðan hún skar hlutina út.<br>
+                                            <br>Þegar skurðinum var lokið voru tabarnir svo brotnir og reynt var að festa bitana saman. Þar sem að teikningin gerði ráð fyrir engu bili milli hluta pössuðu þeir ekki strax saman. Þeir voru þá pússaðir aðeins niður með þjöl og snyrtir til, síðan var þeim öllum smellt saman og lokaútkoman var þá tilbúin, en ferlið í réttri röð má sjá á slideshowinu hér fyrir neðan. Fyrir áhugsama má svo sjá betur hvernig toolpath er gert í <a href="https://youtu.be/wGDx5PD0nTc">þessu myndbandi</a>.
+                                            </font></p>
 									</div>
                                     
                                    <!--  Slideshow: --> 
@@ -298,6 +313,8 @@
                                                 <img src="images/vinstandurInAction.jpg">
                                         </div>
                                         </div>
+                                    <h2 align="middle" id="content">Hönnunarskjöl</h2>
+                                    <p align="justify"><font size="4"><a href="images/verkefni4.zip">Hér má sækja hönnuarskjöl verkefnisins.</a></font></p>
                                     
                                         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="square1.js"></script>
@@ -334,6 +351,14 @@ try {
   console.log(error);
 }
 </script>
+                                    
+                                    <div class="main">
+                                        <header>
+											<h1 align="middle">Verkefni 5 — Að (fræsa) og undirbúa mót</h1>
+                                        </header>
+										<h2 align="middle" id="content">Verkefnalýsing</h2>
+                                        <p align="justify"><font size="4">Sælir.
+                                            </font></p></div>
 								</section>
 
 							<!-- Section -->
