@@ -148,6 +148,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 EMAIL_DEFAULT_CHARSET = "utf-8"
+
 DEFAULT_FROM_EMAIL = "atlifreyr666@gmail.com"
 EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_HOST_USER = "apikey"
