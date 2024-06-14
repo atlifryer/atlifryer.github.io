@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Innskráning{% endblock title %}
+
+{% block content %}
+<h2>Log In</h2>
+<form method="post">{% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-success ml-2" type="submit">Innskrá</button>
+</form>
+<p><a href="{% url 'password_reset' %}">Gleymdist lykilorðið?</a></p>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load prediction_extras %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>All Games</h2>
+    <form method="post" action="{% url 'game_list' %}">
+        {% csrf_token %}
+        {% if games %}
+        {% for game in games %}
+        <div class="game-entry mb-3 d-flex justify-content-center align-items-center">
+            <span class="team team1">{{ game.team1 }}</span>
+            {% if game.game_date > now %}
+            <input type="number" name="predicted_score1_{{ game.id }}" class="score-input"
+                value="{{ user_predictions|get_item:game.id|get_attr:'predicted_score1' }}" min="0" required>
+            <span class="dash">–</span>
+            <input type="number" name="predicted_score2_{{ game.id }}" class="score-input"
+                value="{{ user_predictions|get_item:game.id|get_attr:'predicted_score2' }}" min="0" required>
+            {% else %}
+            <span class="score">{{ user_predictions|get_item:game.id|get_attr:'predicted_score1' }}</span>
+            <span class="dash">–</span>
+            <span class="score">{{ user_predictions|get_item:game.id|get_attr:'predicted_score2' }}</span>
+            {% endif %}
+            <span class="team team2">{{ game.team2 }}</span>
+            <span class="badge bg-primary rounded-pill game-time">{{ game.game_date|date:"M d, Y H:i" }} GMT</span>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit Predictions</button>
+        {% else %}
+        <p>No upcoming games to display.</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}
