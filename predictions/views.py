@@ -58,4 +58,4 @@ class LeaderboardView(LoginRequiredMixin, ListView):
     context_object_name = "leaderboard_users"
 
     def get_queryset(self):
-        return User.objects.annotate(total_score=Sum('prediction__score')).order_by('-total_score')
+        return User.objects.annotate(total_score=Sum('prediction__score')).filter(total_score__gte=0).order_by('-total_score')

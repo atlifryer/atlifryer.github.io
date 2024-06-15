@@ -8,7 +8,9 @@
     <h2>Sælir, {{ user.username }}</h2>
     <p class="welcome-message">Mér þykir ánægjulegt að sjá þig hér. Þú getur tippað á leiki með því að ýta
         á takkann hér að neðan. Þar mátt þú tippa eins og þér sýnist og skipta um skoðun alveg fram að fyrsta sparki
-        boltans.</p>
+        boltans. Stigagjöf er þannig að maður fær 3 stig fyrir rétta niðurstöðu, 2 stig ef markatalan er rétt, og 1 stig
+        ef þú giskar á rétt mörk skoruð hjá öðru hvoru liði. Sem sagt, hámark stiga sem þú getur fengið fyrir eitt tipp
+        eru 7 stig.</p>
     <a href="{% url 'game_list' %}" class="btn btn-success">Tippa á leiki</a>
 </div>
 {% else %}
