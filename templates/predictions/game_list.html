@@ -69,6 +69,12 @@
                     <p><strong>Gleymdir að tippa :-(</strong></p>
                     <p>Þú fékkst 0 stig.</p>
                     {% else %}
+                    <h6 class="teams">Þitt tipp var: </h6>
+                    <div class="teams-container">
+                        <h2 class="team-name">{{ prediction.predicted_score1 }}</h2>
+                        <h2 class="dash">—</h2>
+                        <h2 class="team-name">{{ prediction.predicted_score2 }}</h2>
+                    </div>
                     <p><strong>Lokaniðurstöður hafa ekki verið uppfærðar.</strong></p>
                     {% endif %}
                     {% endwith %}
