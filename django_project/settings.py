@@ -31,9 +31,12 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
     'atlifryer-github-io.onrender.com',
     'atlifreysi.net',
     'www.atlifreysi.net',
+    'atlifryer.github.io',
 ]
 
 
@@ -59,6 +62,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -92,7 +96,7 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=env.str("DATABASE_URL"))
+    'default': dj_database_url.config(default=f'sqlite:///{BASE_DIR}/db.sqlite3')
 }
 
 
@@ -118,7 +122,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'is'
+
+LANGUAGES = [
+    ('is', 'Icelandic'),
+]
 
 TIME_ZONE = 'UTC'
 
@@ -145,7 +153,7 @@ LOGOUT_REDIRECT_URL = "home"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_DEFAULT_CHARSET = "utf-8"
 

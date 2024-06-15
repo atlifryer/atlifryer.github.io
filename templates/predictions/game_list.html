@@ -1,35 +1,86 @@
 {% extends 'base.html' %}
 
 {% load prediction_extras %}
+{% load custom_filters %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2>All Games</h2>
-    <form method="post" action="{% url 'game_list' %}">
+<script>
+    function validateAndProcessForm() {
+        const games = document.querySelectorAll('.game-entry');
+        games.forEach((game) => {
+            const inputs = game.querySelectorAll('input[type="number"]');
+            const scores = Array.from(inputs).map(input => input.value);
+            if (scores.some(score => score !== '') && scores.some(score => score === '')) {
+                inputs.forEach((input) => {
+                    if (input.value === '') {
+                        input.value = 0;
+                    }
+                });
+            }
+        });
+        return true;
+    }
+</script>
+
+<div>
+    <h2>Fótboltaleikir</h2>
+    <form method="post" action="{% url 'game_list' %}" onsubmit="return validateAndProcessForm();">
         {% csrf_token %}
-        {% if games %}
-        {% for game in games %}
-        <div class="game-entry mb-3 d-flex justify-content-center align-items-center">
-            <span class="team team1">{{ game.team1 }}</span>
-            {% if game.game_date > now %}
-            <input type="number" name="predicted_score1_{{ game.id }}" class="score-input"
-                value="{{ user_predictions|get_item:game.id|get_attr:'predicted_score1' }}" min="0" required>
-            <span class="dash">–</span>
-            <input type="number" name="predicted_score2_{{ game.id }}" class="score-input"
-                value="{{ user_predictions|get_item:game.id|get_attr:'predicted_score2' }}" min="0" required>
-            {% else %}
-            <span class="score">{{ user_predictions|get_item:game.id|get_attr:'predicted_score1' }}</span>
-            <span class="dash">–</span>
-            <span class="score">{{ user_predictions|get_item:game.id|get_attr:'predicted_score2' }}</span>
-            {% endif %}
-            <span class="team team2">{{ game.team2 }}</span>
-            <span class="badge bg-primary rounded-pill game-time">{{ game.game_date|date:"M d, Y H:i" }} GMT</span>
+        {% regroup games by game_date|date:"l, j. F"|capitalize_first as game_days %}
+        {% for day in game_days %}
+        <div class="day-section">
+            <h4>{{ day.grouper }}</h4>
+            <div class="list-group">
+                {% for game in day.list %}
+                <div class="list-group-item list-group-item-action flex-column align-items-start game-entry">
+                    <h5 class="teams">{{ game.game_date|date:"H:i" }} GMT</h5>
+                    <div class="teams-container">
+                        <h2 class="team-name">{{ game.team1 }}</h2>
+                        <h2 class="dash">—</h2>
+                        <h2 class="team-name">{{ game.team2 }}</h2>
+                    </div>
+                    {% with prediction=predictions|get_item:game.id %}
+                    {% if game.game_date > now %}
+                    <div class="teams-container">
+                        <input type="number" name="predicted_score1_{{ game.id }}" class="score-input"
+                            placeholder="Team 1 Score" value="{{ prediction.predicted_score1|default_if_none:'' }}"
+                            min="0">
+                        <h2 class="dash">—</h2>
+                        <input type="number" name="predicted_score2_{{ game.id }}" class="score-input"
+                            placeholder="Team 2 Score" value="{{ prediction.predicted_score2|default_if_none:'' }}"
+                            min="0">
+                    </div>
+                    {% elif game.actual_score1 is not None and game.actual_score2 is not None %}
+                    <div class="teams-container">
+                        <h2 class="team-name">{{ game.actual_score1 }}</h2>
+                        <h2 class="dash">—</h2>
+                        <h2 class="team-name">{{ game.actual_score2 }}</h2>
+                    </div>
+                    <br>
+                    <h6 class="teams">Þitt tipp var: </h6>
+                    <div class="teams-container">
+                        <h2 class="team-name">{{ prediction.predicted_score1 }}</h2>
+                        <h2 class="dash">—</h2>
+                        <h2 class="team-name">{{ prediction.predicted_score2 }}</h2>
+                    </div>
+                    <br>
+                    <p>Þú fékkst {{ prediction.score }} stig.</p>
+                    {% elif prediction.predicted_score1 is None or prediction.predicted_score2 is None %}
+                    <p><strong>Gleymdir að tippa :-(</strong></p>
+                    <p>Þú fékkst 0 stig.</p>
+                    {% else %}
+                    <p><strong>Lokaniðurstöður hafa ekki verið uppfærðar.</strong></p>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+                {% endfor %}
+            </div>
         </div>
+        <br>
         {% endfor %}
-        <button type="submit" class="btn btn-primary">Submit Predictions</button>
-        {% else %}
-        <p>No upcoming games to display.</p>
-        {% endif %}
+        <div class="text-end mt-3">
+            <button type="submit" class="btn btn-primary">Staðfesta tipp</button>
+        </div>
     </form>
 </div>
 {% endblock %}

@@ -1,8 +1,15 @@
+# predictions/views.py
+
 from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Game, Prediction
+from django.contrib.auth.models import User
+from django.db.models import Sum
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class GameListView(LoginRequiredMixin, ListView):
@@ -27,16 +34,28 @@ class GameListView(LoginRequiredMixin, ListView):
                         'predicted_score2': predicted_score2
                     }
                 )
-                print(f"Saved: {predicted_score1}-{predicted_score2} for game {game.id}")  # Debugging line
         return redirect('game_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Fetch user's predictions
-        user_predictions = {prediction.game.id: prediction for prediction in Prediction.objects.filter(user=self.request.user)}
-        context['user_predictions'] = user_predictions
-        # Add current time to the context
+        predictions = Prediction.objects.filter(
+            user=self.request.user,
+            game__in=context['games']
+        ).select_related('game')
+        
+        # Calculate the score for each prediction on the fly
+        for prediction in predictions:
+            prediction.calculate_score()  # Ensure the score is calculated
+
+        context['predictions'] = {prediction.game.id: prediction for prediction in predictions}
         context['now'] = timezone.now()
         return context
 
 
+class LeaderboardView(LoginRequiredMixin, ListView):
+    model = User
+    template_name = "predictions/leaderboard.html"
+    context_object_name = "leaderboard_users"
+
+    def get_queryset(self):
+        return User.objects.annotate(total_score=Sum('prediction__score')).order_by('-total_score')
