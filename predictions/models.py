@@ -3,15 +3,30 @@
 from django.db import models
 from django.conf import settings
 
+
+class Team(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Team Name")
+    country_code = models.CharField(max_length=3, verbose_name="Country Code")
+    group = models.CharField(max_length=10, verbose_name="Group")
+
+    def __str__(self):
+        return f"{self.name} ({self.country_code})"
+
+
 class Game(models.Model):
     team1 = models.CharField(max_length=100, verbose_name="Team 1 Name")
     team2 = models.CharField(max_length=100, verbose_name="Team 2 Name")
+    team1_group = models.CharField(max_length=10, verbose_name="Team 1 Group", default="X", blank=True)
+    team2_group = models.CharField(max_length=10, verbose_name="Team 2 Group", default="X", blank=True)
+    team1_country_code = models.CharField(max_length=3, verbose_name="Team 1 Country Code", default="IS", blank=True)
+    team2_country_code = models.CharField(max_length=3, verbose_name="Team 2 Country Code", default="IS", blank=True)
     game_date = models.DateTimeField(verbose_name="Start Time")
     actual_score1 = models.IntegerField(null=True, blank=True, verbose_name="Team 1 Actual Score")
     actual_score2 = models.IntegerField(null=True, blank=True, verbose_name="Team 2 Actual Score")
 
     def __str__(self):
         return f"{self.team1} vs {self.team2} on {self.game_date.strftime('%Y-%m-%d %H:%M')}"
+
 
 class Prediction(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
