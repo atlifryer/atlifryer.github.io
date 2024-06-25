@@ -8,6 +8,9 @@ from .models import Game, Prediction
 from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.contrib.auth import get_user_model
+from django.utils.dateparse import parse_date
+from django.db.models.functions import TruncDay
+from django.utils.timezone import now
 
 User = get_user_model()
 
@@ -18,7 +21,18 @@ class GameListView(LoginRequiredMixin, ListView):
     context_object_name = 'games'
 
     def get_queryset(self):
-        return Game.objects.all().order_by('game_date')
+        queryset = Game.objects.all().order_by('game_date')
+        game_date_gte = self.request.GET.get('game_date__gte')
+        
+        if game_date_gte:
+            queryset = queryset.filter(game_date__date__gte=game_date_gte)
+        else:
+            game_date = self.request.GET.get('game_date')
+            if game_date:
+                game_date = parse_date(game_date)
+                queryset = queryset.filter(game_date__date=game_date)
+
+        return queryset
 
     def post(self, request, *args, **kwargs):
         games = self.get_queryset()
@@ -38,18 +52,28 @@ class GameListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
+        all_games = Game.objects.all()
+        unique_dates = all_games.annotate(date=TruncDay('game_date')).order_by('date').values_list('date', flat=True).distinct()
+        context['unique_dates'] = unique_dates
+        
+        filtered_games = self.get_queryset()
+        context['games'] = filtered_games
+
         predictions = Prediction.objects.filter(
             user=self.request.user,
-            game__in=context['games']
+            game__in=filtered_games
         ).select_related('game')
-        
-        # Calculate the score for each prediction on the fly
-        for prediction in predictions:
-            prediction.calculate_score()  # Ensure the score is calculated
 
+        for prediction in predictions:
+            prediction.calculate_score()
+        
         context['predictions'] = {prediction.game.id: prediction for prediction in predictions}
+        context['selected_date'] = self.request.GET.get('game_date', '')
+        context['today'] = now().date()
         context['now'] = timezone.now()
         return context
+
 
 
 class LeaderboardView(LoginRequiredMixin, ListView):

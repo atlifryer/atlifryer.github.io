@@ -1,9 +1,30 @@
+<!-- templates/predictions/game_list.html -->
 {% extends 'base.html' %}
 
 {% load prediction_extras %}
 {% load custom_filters %}
 
 {% block content %}
+
+<div class="filter-buttons mb-3 d-flex justify-content-between">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dateDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Veldu dagsetningu:
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dateDropdownMenuButton">
+            <li><a class="dropdown-item" href="?">Allir leikir</a></li>
+            {% for day in unique_dates %}
+            <li><a class="dropdown-item" href="?game_date={{ day|date:'Y-m-d' }}" {% if day|matches_date:request.GET.game_date %}aria-current="true" style="font-weight: bold;" {% endif %}>
+                    {{ day|date:"l, j. F"|capitalize_first }}
+                </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="?game_date__gte={{ today|date:'Y-m-d' }}" class="btn btn-secondary">Leikir í dag og seinna</a>
+</div>
+
+
+
 <script>
     function validateAndProcessForm() {
         const games = document.querySelectorAll('.game-entry');
@@ -42,13 +63,9 @@
                     {% with prediction=predictions|get_item:game.id %}
                     {% if game.game_date > now %}
                     <div class="teams-container">
-                        <input type="number" name="predicted_score1_{{ game.id }}" class="score-input"
-                            placeholder="Team 1 Score" value="{{ prediction.predicted_score1|default_if_none:'' }}"
-                            min="0">
+                        <input type="number" name="predicted_score1_{{ game.id }}" class="score-input" placeholder="Team 1 Score" value="{{ prediction.predicted_score1|default_if_none:'' }}" min="0">
                         <h2 class="dash">—</h2>
-                        <input type="number" name="predicted_score2_{{ game.id }}" class="score-input"
-                            placeholder="Team 2 Score" value="{{ prediction.predicted_score2|default_if_none:'' }}"
-                            min="0">
+                        <input type="number" name="predicted_score2_{{ game.id }}" class="score-input" placeholder="Team 2 Score" value="{{ prediction.predicted_score2|default_if_none:'' }}" min="0">
                     </div>
                     {% elif game.actual_score1 is not None and game.actual_score2 is not None %}
                     <div class="teams-container">
@@ -95,4 +112,9 @@
         </div>
     </form>
 </div>
+<script>
+    document.getElementById('game_date').addEventListener('change', function () {
+        this.form.submit();
+    });
+</script>
 {% endblock %}
