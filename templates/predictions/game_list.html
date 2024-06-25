@@ -6,23 +6,27 @@
 
 {% block content %}
 
-<div class="filter-buttons mb-3 d-flex justify-content-between">
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dateDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Veldu dagsetningu:
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dateDropdownMenuButton">
-            <li><a class="dropdown-item" href="?">Allir leikir</a></li>
-            {% for day in unique_dates %}
-            <li><a class="dropdown-item" href="?game_date={{ day|date:'Y-m-d' }}" {% if day|matches_date:request.GET.game_date %}aria-current="true" style="font-weight: bold;" {% endif %}>
-                    {{ day|date:"l, j. F"|capitalize_first }}
-                </a></li>
-            {% endfor %}
-        </ul>
+<div class="row align-items-center">
+    <div class="col-12 col-md-6 mb-3 mb-md-0 d-flex justify-content-md-start justify-content-center">
+        <div class="dropdown w-100"> <!-- Ensure dropdown div takes full width -->
+            <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dateDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Veldu dagsetningu:
+            </button>
+            <ul class="dropdown-menu w-100"> <!-- Dropdown menu takes full width -->
+                <li><a class="dropdown-item" href="?">Allir leikir</a></li>
+                {% for day in unique_dates %}
+                <li><a class="dropdown-item" href="?game_date={{ day|date:'Y-m-d' }}" {% if day|matches_date:request.GET.game_date %}aria-current="true" style="font-weight: bold;" {% endif %}>
+                        {{ day|date:"l, j. F"|capitalize_first }}
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-    <a href="?game_date__gte={{ today|date:'Y-m-d' }}" class="btn btn-secondary">Leikir í dag og seinna</a>
+    <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center">
+        <a href="?game_date__gte={{ today|date:'Y-m-d' }}" class="btn btn-secondary w-100">Leikir í dag og seinna</a>
+    </div>
 </div>
-
+<br>
 
 
 <script>
