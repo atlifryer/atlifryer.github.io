@@ -51,7 +51,7 @@ class Prediction(models.Model):
             points += 3
 
         # Calculate points for correct goal difference
-        if abs(result_actual) == abs(result_predicted):
+        if result_actual == result_predicted:
             points += 2
 
         # Calculate points for exact goals for each team
