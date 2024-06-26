@@ -1,0 +1,88 @@
+<!-- templates/predictions/knockout_stage.html -->
+{% extends 'base.html' %}
+
+{% load custom_filters %}
+
+{% block content %}
+<script>
+    function validateAndProcessForm() {
+        const games = document.querySelectorAll('.game-entry');
+        games.forEach((game) => {
+            const inputs = game.querySelectorAll('input[type="number"]');
+            const scores = Array.from(inputs).map(input => input.value);
+            if (scores.some(score => score !== '') && scores.some(score => score === '')) {
+                inputs.forEach((input) => {
+                    if (input.value === '') {
+                        input.value = 0;
+                    }
+                });
+            }
+        });
+        return true;
+    }
+</script>
+
+<div>
+    <h1>{{ stage_name }}</h1>
+    <form method="post" onsubmit="return validateAndProcessForm();"></form>
+    {% csrf_token %}
+    {% regroup knockout_games by game_date|date:"l, j. F"|capitalize_first as game_days %}
+    {% for day in game_days %}
+    <div class="day-section">
+        <h4>{{ day.grouper }}</h4>
+        <div class="list-group">
+            {% for game in day.list %}
+            <div class="list-group-item list-group-item-action flex-column align-items-start game-entry">
+                <h5 class="teams">{{ game.game_date|date:"H:i" }} GMT</h5>
+                <div class="teams-container">
+                    <h2 class="team-name">{{ game.team1.name }}</h2>
+                    <h2 class="dash">—</h2>
+                    <h2 class="team-name">{{ game.team2.name }}</h2>
+                </div>
+                {% with prediction=knockout_predictions|get_item:game.id %}
+                {% if game.game_date > now %}
+                <div class="teams-container">
+                    <input type="number" name="predicted_score1_{{ game.id }}" class="score-input" placeholder="Team 1 Score" value="{{ prediction.predicted_score1|default_if_none:'' }}" min="0">
+                    <h2 class="dash">—</h2>
+                    <input type="number" name="predicted_score2_{{ game.id }}" class="score-input" placeholder="Team 2 Score" value="{{ prediction.predicted_score2|default_if_none:'' }}" min="0">
+                </div>
+                {% elif game.actual_score1 is not None and game.actual_score2 is not None %}
+                <div class="teams-container">
+                    <h2 class="team-name">{{ game.actual_score1 }}</h2>
+                    <h2 class="dash">—</h2>
+                    <h2 class="team-name">{{ game.actual_score2 }}</h2>
+                </div>
+                <br>
+                {% if prediction.predicted_score1 is None or prediction.predicted_score2 is None %}
+                <p><strong>Gleymdir að tippa :-(</strong></p>
+                <p>Þú fékkst 0 stig.</p>
+                {% else %}
+                <h6 class="teams">Þitt tipp var: </h6>
+                <div class="teams-container">
+                    <h2 class="team-name">{{ prediction.predicted_score1 }}</h2>
+                    <h2 class="dash">—</h2>
+                    <h2 class="team-name">{{ prediction.predicted_score2 }}</h2>
+                </div>
+                <br>
+                <p>Þú fékkst {{ prediction.score }} stig.</p>
+                {% endif %}
+                {% else %}
+                <p><strong>Lokaniðurstöður hafa ekki verið uppfærðar.</strong></p>
+                {% endif %}
+                {% endwith %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+
+
+
+
+    <div class="text-end mt-3">
+        <button type="submit" class="btn btn-primary">Staðfesta tipp</button>
+    </div>
+    </form>
+</div>
+{% endblock %}

@@ -6,20 +6,33 @@ from django.conf import settings
 
 class Team(models.Model):
     name = models.CharField(max_length=100, verbose_name="Team Name")
-    country_code = models.CharField(max_length=3, verbose_name="Country Code")
-    group = models.CharField(max_length=10, verbose_name="Group")
+    seed = models.IntegerField(null=True, blank=True, verbose_name="Seed Number")
 
     def __str__(self):
-        return f"{self.name} ({self.country_code})"
+        return f"{self.name} (seed {self.seed})"
+
+
+class KnockoutGame(models.Model):
+    STAGE_CHOICES = [
+        ('round-of-16', '16 liða úrslit'),
+        ('quarterfinals', '8 liða úrslit'),
+        ('semifinals', 'Undanúrslit'),
+        ('final', 'Úrslit'),
+    ]
+
+    stage = models.CharField(max_length=20, choices=STAGE_CHOICES, default=None)
+    team1 = models.ForeignKey(Team, related_name='knockout_team1', on_delete=models.CASCADE, null=True, blank=True)
+    team2 = models.ForeignKey(Team, related_name='knockout_team2', on_delete=models.CASCADE, null=True, blank=True)
+    game_date = models.DateTimeField(verbose_name="Start Time")
+    actual_score1 = models.IntegerField(null=True, blank=True, verbose_name="Team 1 Actual Score")
+    actual_score2 = models.IntegerField(null=True, blank=True, verbose_name="Team 2 Actual Score")
+    
 
 
 class Game(models.Model):
+
     team1 = models.CharField(max_length=100, verbose_name="Team 1 Name")
     team2 = models.CharField(max_length=100, verbose_name="Team 2 Name")
-    team1_group = models.CharField(max_length=10, verbose_name="Team 1 Group", default="X", blank=True)
-    team2_group = models.CharField(max_length=10, verbose_name="Team 2 Group", default="X", blank=True)
-    team1_country_code = models.CharField(max_length=3, verbose_name="Team 1 Country Code", default="IS", blank=True)
-    team2_country_code = models.CharField(max_length=3, verbose_name="Team 2 Country Code", default="IS", blank=True)
     game_date = models.DateTimeField(verbose_name="Start Time")
     actual_score1 = models.IntegerField(null=True, blank=True, verbose_name="Team 1 Actual Score")
     actual_score2 = models.IntegerField(null=True, blank=True, verbose_name="Team 2 Actual Score")
