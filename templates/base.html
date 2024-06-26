@@ -165,12 +165,16 @@
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="{% url 'home' %}">Tippleikur Atla Freysa</a>
             {% if user.is_authenticated %}
-            <div class="dropdown ms-auto"> <!-- Always keep margin start auto -->
+            <div class="dropdown ms-auto">
                 <button class="btn btn-secondary dropdown-toggle user-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ user.username }}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="{% url 'game_list' %}">Skoða þín tipp</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="{% url 'knockout_game_list' %}">Útsláttarleikir</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>

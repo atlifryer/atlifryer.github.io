@@ -1,6 +1,12 @@
 # predictions/admin.py
 from django.contrib import admin
-from .models import Game, Prediction, Team
+from .models import (
+    Game, 
+    Prediction, 
+    Team, 
+    KnockoutGame, 
+    KnockoutPrediction,
+)
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
@@ -18,3 +24,13 @@ class PredictionAdmin(admin.ModelAdmin):
     list_display = ('user', 'game', 'predicted_score1', 'predicted_score2', 'prediction_time')
     list_filter = ('user', 'game')
     search_fields = ('user__username', 'game__team1__name', 'game__team2__name')
+
+@admin.register(KnockoutPrediction)
+class KnockoutPredictionAdmin(admin.ModelAdmin):
+    list_display = ('user', 'game', 'predicted_score1', 'predicted_score2', 'prediction_time')
+    list_filter = ('user', 'game')
+    search_fields = ('user__username', 'game__team1__name', 'game__team2__name')
+
+@admin.register(KnockoutGame)
+class KnockoutGameAdmin(admin.ModelAdmin):
+    list_display = ['team1', 'team2', 'game_date', 'actual_score1', 'actual_score2', 'next_game']
