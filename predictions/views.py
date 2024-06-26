@@ -1,10 +1,11 @@
 # predictions/views.py
 
-from django.views.generic import ListView
+from django.views.generic import ListView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.utils import timezone
-from .models import Game, Prediction
+from .models import Game, Prediction, KnockoutRound
+from .forms import PredictionForm
 from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.contrib.auth import get_user_model
@@ -13,6 +14,42 @@ from django.db.models.functions import TruncDay
 from django.utils.timezone import now
 
 User = get_user_model()
+
+
+class KnockoutRoundView(LoginRequiredMixin, FormView):
+    template_name = 'predictions/knockout_round.html'
+    form_class = PredictionForm
+    success_url = '/next_round/'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        round = self.kwargs['round']
+        user = self.request.user
+        games = Game.objects.filter(knockoutround__round=round, knockoutround__user=user)
+        kwargs['games'] = games
+        return kwargs
+
+    def form_valid(self, form):
+        round = self.kwargs['round']
+        user = self.request.user
+        games = Game.objects.filter(knockoutround__round=round, knockoutround__user=user)
+        for game in games:
+            predicted_score1 = form.cleaned_data[f'predicted_score1_{game.id}']
+            predicted_score2 = form.cleaned_data[f'predicted_score2_{game.id}']
+            Prediction.objects.update_or_create(
+                user=user,
+                game=game,
+                defaults={'predicted_score1': predicted_score1, 'predicted_score2': predicted_score2}
+            )
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        round = self.kwargs['round']
+        user = self.request.user
+        context['games'] = Game.objects.filter(knockoutround__round=round, knockoutround__user=user)
+        context['round'] = round
+        return context
 
 
 class GameListView(LoginRequiredMixin, ListView):
@@ -73,7 +110,6 @@ class GameListView(LoginRequiredMixin, ListView):
         context['today'] = now().date()
         context['now'] = timezone.now()
         return context
-
 
 
 class LeaderboardView(LoginRequiredMixin, ListView):

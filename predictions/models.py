@@ -23,6 +23,21 @@ class Game(models.Model):
         return f"{self.team1} vs {self.team2} on {self.game_date.strftime('%Y-%m-%d %H:%M')}"
 
 
+class KnockoutRound(models.Model):
+    ROUND_CHOICES = [
+        ('R16', '16 liða úrslit'),
+        ('QF', '8 liða úrslit'),
+        ('SF', 'Undanúrslit'),
+        ('F', 'Úrslit'),
+    ]
+    round = models.CharField(max_length=3, choices=ROUND_CHOICES)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.get_round_display()} - {self.game} - {self.username}"
+
+
 class Prediction(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
