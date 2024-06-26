@@ -4,8 +4,8 @@ from .models import Game, Prediction, Team
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ('name', 'country_code', 'group')
-    search_fields = ('name', 'country_code')
+    list_display = ('name', 'seed')
+    search_fields = ('name', 'seed')
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):

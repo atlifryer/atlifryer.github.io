@@ -17,3 +17,7 @@ def get_unique_dates(games):
 def matches_date(day, game_date):
     formatted_day = day.strftime('%Y-%m-%d')
     return formatted_day == game_date
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)
