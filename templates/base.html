@@ -104,97 +104,9 @@
             text-align: right;
         }
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
         .team-name:last-child,
         .score-input:last-child {
             text-align: left;
-        }
-
-        .game-entry {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .teams-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .game-entry {
-            border: none;
-            background: none;
-            padding: 10px 0;
-        }
-
-        .teams-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .team-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            color: #fff;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            margin-top: 20px;
-        }
-
-        .dropdown-menu {
-            border-radius: 0.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-
-        .dropdown-item {
-            font-size: 1rem;
-            padding: 10px 15px;
-        }
-
-        .dropdown-item:hover,
-        .dropdown-item:focus {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .team-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            color: #fff;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            margin-top: 20px;
         }
 
         .score-input {
@@ -253,7 +165,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="{% url 'home' %}">Tippleikur Atla Freysa</a>
             {% if user.is_authenticated %}
-            <div class="dropdown ms-auto"> <!-- Always keep margin start auto -->
+            <div class="dropdown ms-auto">
                 <button class="btn btn-secondary dropdown-toggle user-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ user.username }}
                 </button>
