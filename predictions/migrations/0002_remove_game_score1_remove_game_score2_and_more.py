@@ -10,8 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="game", name="score1",),
-        migrations.RemoveField(model_name="game", name="score2",),
         migrations.AlterField(
             model_name="game",
             name="game_date",
