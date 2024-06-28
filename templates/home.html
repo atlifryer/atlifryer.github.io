@@ -12,7 +12,10 @@
         boltans. Stigagjöf er þannig að maður fær 3 stig fyrir rétta niðurstöðu, 2 stig ef markatalan er rétt, og 1 stig
         ef þú giskar á rétt mörk skoruð hjá öðru hvoru liði. Sem sagt, hámark stiga sem þú getur fengið fyrir eitt tipp
         eru 7 stig.</p>
-    <a href="{% url 'game_list' %}" class="btn btn-success">Tippa á leiki</a>
+    <div class="button-container">
+        <a href="{% url 'game_list' %}" class="btn btn-success mb-3">Tippa á leiki</a>
+        <a href="{% url 'knockout:predict_stage' stage='R16' %}" class="btn btn-success">Giska á sigurvegara mótsins</a>
+    </div>
 </div>
 {% else %}
 <div class="logged-out-area">

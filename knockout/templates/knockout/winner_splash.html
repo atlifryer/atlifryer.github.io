@@ -1,0 +1,11 @@
+<!-- templates/knockout/winner_splash.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 50px;">
+    <h1>Takk fyrir þátttökuna!</h1>
+    <p>Samkvæmt þér, {{ user }}, mun sigurvegari EM 2024 vera:</p>
+    <h2>{{ winner }}</h2>
+    <p>Þú getur breytt giskum með því að ýta <a href="{% url 'knockout:predict_stage' stage='R16' %}">hér</a>.</p>
+</div>
+{% endblock %}

@@ -1,4 +1,5 @@
 # django_project/urls.py
+
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
@@ -8,5 +9,6 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("predictions/", include('predictions.urls')),
+    path("knockout/", include('knockout.urls', namespace='knockout')),  # Ensure the namespace is included
     path("", include("pages.urls")),
 ]

@@ -33,10 +33,6 @@
             padding-left: 15px;
         }
 
-        .dropdown-menu {
-            min-width: 200px;
-        }
-
         .btn-secondary {
             background-color: #7bb6f5;
             border-color: #7bb6f5;
@@ -89,24 +85,80 @@
             box-shadow: none;
         }
 
-        .teams-container {
+        .button-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            text-align: center;
-            gap: 10px;
-        }
-
-        .team-name {
-            flex: 1;
-            flex-grow: 1;
-            white-space: nowrap;
-            text-align: right;
+            margin-top: 20px;
         }
 
         .team-name:last-child,
         .score-input:last-child {
             text-align: left;
+        }
+
+        .game-entry {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .teams-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .dropdown-menu {
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .dropdown-item {
+            font-size: 1rem;
+            padding: 10px 15px;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
         }
 
         .score-input {
@@ -171,6 +223,10 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="{% url 'game_list' %}">Skoða þín tipp</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="{% url 'knockout:predict_stage' stage='R16' %}">Giska á úrslit</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>

@@ -1,0 +1,51 @@
+<!-- templates/knockout/stage_prediction_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row align-items-center">
+    <div class="col-12 col-md-6 mb-3 mb-md-0 d-flex justify-content-md-start justify-content-center">
+        {% if stage == 'R16' %}
+        <h2>16 liða úrslit</h2>
+        {% elif stage == 'QF' %}
+        <h2>8 liða úrslit</h2>
+        {% elif stage == 'SF' %}
+        <h2>Undanúrslit</h2>
+        {% else %}
+        <h2>Úrslit</h2>
+        {% endif %}
+    </div>
+</div>
+<br>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+        <form method="post" action="{% url 'knockout:predict_stage' stage=stage %}">
+            {% csrf_token %}
+            <div class="list-group">
+                {% for game in form %}
+                <div class="list-group-item list-group-item-action flex-column align-items-start game-entry">
+                    <div class="teams-container">
+                        <h4 class="team-name">{{ game.field.label }}</h4>
+                    </div>
+                    <div class="teams-container">
+                        {{ game }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Submit Predictions</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if error %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 text-center">
+        <p style="color: red;">{{ error }}</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
