@@ -1,0 +1,21 @@
+<!-- templates/knockouts/r16.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h2>{{ round_name }} Matches</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {% for idx, (team1, team2) in games %}
+        <div class="game-entry">
+            <p>{{ team1 }} vs {{ team2 }}</p>
+            <select name="winners{{ idx }}">
+                <option value="{{ team1 }}">{{ team1 }}</option>
+                <option value="{{ team2 }}">{{ team2 }}</option>
+            </select>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit Predictions</button>
+    </form>
+</div>
+{% endblock %}

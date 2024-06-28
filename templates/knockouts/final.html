@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h2>Final Match</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="game-entry">
+            <p>{{ games.0.0 }} vs {{ games.0.1 }}</p>
+            <select name="winners">
+                <option value="{{ games.0.0 }}">{{ games.0.0 }}</option>
+                <option value="{{ games.0.1 }}">{{ games.0.1 }}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Predictions</button>
+    </form>
+</div>
+{% endblock %}

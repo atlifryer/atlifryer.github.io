@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'predictions.apps.PredictionsConfig',
+    'knockouts.apps.KnockoutsConfig',
 ]
 
 MIDDLEWARE = [
