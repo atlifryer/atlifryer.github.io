@@ -22,28 +22,28 @@
 
 <div class="row justify-content-center">
     <div class="col-12 col-md-8">
-        {% if current_time < "2024-06-29 12:00:00" %} <form method="post" action="{% url 'knockout:predict_stage' stage=stage %}">
-            {% csrf_token %}
-            <div class="list-group">
-                {% for game in form %}
-                <div class="list-group-item list-group-item-action flex-column align-items-start game-entry">
-                    <div class="teams-container">
-                        <h4 class="team-name">{{ game.field.label }}</h4>
-                    </div>
-                    <div class="teams-container">
-                        {{ game }}
-                    </div>
+        <!-- {% if current_time < "2024-06-29 12:00:00" %} <form method="post" action="{% url 'knockout:predict_stage' stage=stage %}"> -->
+        {% csrf_token %}
+        <div class="list-group">
+            {% for game in form %}
+            <div class="list-group-item list-group-item-action flex-column align-items-start game-entry">
+                <div class="teams-container">
+                    <h4 class="team-name">{{ game.field.label }}</h4>
                 </div>
-                {% endfor %}
+                <div class="teams-container">
+                    {{ game }}
+                </div>
             </div>
-            <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Staðfesta gisk</button>
-            </div>
-            </form>
-            {% else %}
+            {% endfor %}
+        </div>
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Staðfesta gisk</button>
+        </div>
+        </form>
+        <!-- {% else %}
             <p>Útsláttarleikirnir eru byrjaðir, og því getur þú ekki giskað á úrslitin lengur...
                 Hafðu þó ekki áhyggjur, gisk þín eru geymd! (Ég mun uppfæra þetta til að sýna þér hvað þú giskaðir á seinna...)</p>
-            {% endif %}
+            {% endif %} -->
     </div>
 </div>
 
