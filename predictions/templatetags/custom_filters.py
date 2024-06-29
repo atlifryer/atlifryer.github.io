@@ -1,4 +1,5 @@
 # predictions/templatetags/custom_filters.py
+
 from django import template
 from predictions.models import Game
 from django.db.models.functions import TruncDay
