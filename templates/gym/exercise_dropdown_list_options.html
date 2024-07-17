@@ -1,0 +1,4 @@
+<!-- templates/gym/exercise_dropdown_list_options.html -->
+{% for exercise in exercises %}
+<option value="{{ exercise.pk }}">{{ exercise.name }}</option>
+{% endfor %}

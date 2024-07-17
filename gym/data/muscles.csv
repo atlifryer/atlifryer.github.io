@@ -1,0 +1,28 @@
+Exercise,Exercise day,Primary Muscle,Secondary Muscle,Additional Muscles
+Bench Press,Chest/Shoulders/Triceps,Pectorals,Triceps,Anterior Deltoids
+Shoulder Press,Chest/Shoulders/Triceps,Deltoids,Triceps,
+Incline Dumbbell Press,Chest/Shoulders/Triceps,Upper Pectorals,Deltoids,Triceps
+Tricep Pushdowns,Chest/Shoulders/Triceps,Triceps,,
+Lateral Raises Dumbbell,Chest/Shoulders/Triceps,Deltoids,,
+Pectoral Dumbbell Flyes,Chest/Shoulders/Triceps,Pectorals,,
+Cable Arm Extension,Chest/Shoulders/Triceps,Triceps,,
+Squat,Leg Day,Quadriceps,Glutes,"Hamstrings, Lower Back"
+Deadlift,Leg Day,Glutes,Hamstrings,"Lower Back, Quadriceps"
+Leg Extension Machine,Leg Day,Quadriceps,,
+Leg Curl Machine,Leg Day,Hamstrings,Calves,
+Hip Abduction Machine,Leg Day,Gluteus Medius,Gluteus Minimus,
+Hip Adduction Machine,Leg Day,Adductors,,
+Left Calf Raises,Leg Day,Gastrocnemius,Soleus,
+Right Calf Raises,Leg Day,Gastrocnemius,Soleus,
+Lat Pulldown Cable,Back/Biceps,Latissimus Dorsi,Biceps,Rear Deltoids
+Dumbbell Row Right Arm,Back/Biceps,Middle Back,Biceps,Lats
+Dumbbell Row Left Arm,Back/Biceps,Middle Back,Biceps,Lats
+Bicep Curls (Curved Barbells),Back/Biceps,Biceps,Forearms,
+Face Pulls (Cables),Back/Biceps,Rear Deltoids,Trapezius,Rhomboids
+Seated Cable Rows (Dual Pulley Row),Back/Biceps,Middle Back,Lats,Biceps
+Rear Delt Flyes Machine,Back/Biceps,Rear Deltoids,Trapezius,
+Dumbbell Hammer Curls,Back/Biceps,Biceps,Brachialis,Forearms
+Pectoral Fly Machine,Chest/Shoulders/Triceps,Pectorals,,
+Right Arm Hammer Curls Cables,Back/Biceps,Biceps,Forearms,Brachialis
+Left Arm Hammer Curls Cables,Back/Biceps,Biceps,Forearms,Brachialis
+Seated Cable Rows (Single Pulley Row),Back/Biceps,Middle Back,Lats,Biceps

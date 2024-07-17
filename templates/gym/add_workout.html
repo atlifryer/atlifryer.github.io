@@ -1,0 +1,64 @@
+<!-- gym/templates/gym/add_workout.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Load exercises based on selected workout day
+        $('#id_workout_day').change(function () {
+            var url = "{% url 'ajax_load_exercises' %}";
+            var workoutDay = $(this).val();
+            $.ajax({
+                url: url,
+                data: { 'workout_day': workoutDay },
+                success: function (data) {
+                    $("#id_exercise").html(data).trigger('change');  // Trigger change to load last workout details
+                }
+            });
+        });
+
+        // Load last workout details when an exercise is selected
+        $('#id_exercise').change(function () {
+            var exerciseId = $(this).val();
+            var url = "{% url 'last_workout_details' %}";
+            if (!exerciseId) return;  // Prevent fetching if no exercise is selected
+
+            $.ajax({
+                url: url,
+                data: { 'exercise_id': exerciseId },
+                success: function (data) {
+                    if (data.error) {
+                        $('#last_workout_display').html(data.error);
+                    } else {
+                        var lastWorkoutInfo = 'Last time you did this exercise was on ' + data.date + '. Details:<br>';
+                        data.workouts.forEach(function (workout) {
+                            lastWorkoutInfo += workout.reps + ' reps of ' + workout.weight + ' ' + workout.unit +
+                                ', repeated ' + workout.sets + ' times<br>';
+                        });
+                        $('#last_workout_display').html(lastWorkoutInfo);
+                    }
+                },
+                error: function () {
+                    $('#last_workout_display').html('Unable to retrieve last workout data.');
+                }
+            });
+        });
+
+        // Trigger exercise details fetch for the default selected exercise on page load
+        $('#id_exercise').trigger('change');
+    });
+</script>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log Workout</button>
+</form>
+
+<div id="last_workout_display">
+    <!-- Last workout details will be shown here -->
+</div>
+{% endblock %}

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'predictions.apps.PredictionsConfig',
     'knockout.apps.KnockoutConfig',
+    'gym.apps.GymConfig',
 ]
 
 MIDDLEWARE = [

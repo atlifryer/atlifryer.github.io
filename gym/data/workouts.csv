@@ -1,0 +1,99 @@
+Date,Weekday,Exercise,Exercise Day,Weight,Unit,Weight in other unit,Other unit,Reps,Sets,Primary Muscles,Secondary Muscles,Additional Muscles
+"July 1, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,45,lbs,20,kg,12,1,Pectorals,Triceps,Anterior Deltoids
+"July 1, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,95,lbs,43,kg,10,2,Pectorals,Triceps,Anterior Deltoids
+"July 1, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,45,lbs,20,kg,15,1,Pectorals,Triceps,Anterior Deltoids
+"July 1, 2024",Mánudagur,Shoulder Press,Chest/Shoulders/Triceps,45,lbs,20,kg,12,3,Deltoids,Triceps,
+"July 1, 2024",Mánudagur,Incline Dumbbell Press,Chest/Shoulders/Triceps,40,lbs,18,kg,10,4,Upper Pectorals,Deltoids,Triceps
+"July 1, 2024",Mánudagur,Tricep Pushdowns,Chest/Shoulders/Triceps,50,lbs,23,kg,12,4,Triceps,,
+"July 1, 2024",Mánudagur,Lateral Raises Dumbbell,Chest/Shoulders/Triceps,40,lbs,18,kg,12,4,Deltoids,,
+"July 1, 2024",Mánudagur,Pectoral Dumbbell Flyes,Chest/Shoulders/Triceps,40,lbs,18,kg,8,4,Pectorals,,
+"July 1, 2024",Mánudagur,Cable Arm Extension,Chest/Shoulders/Triceps,30,lbs,14,kg,12,3,Triceps,,
+"July 3, 2024",Miðvikudagur,Squat,Leg Day,45,lbs,20,kg,12,1,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 3, 2024",Miðvikudagur,Squat,Leg Day,95,lbs,43,kg,10,3,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 3, 2024",Miðvikudagur,Squat,Leg Day,45,lbs,20,kg,12,1,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 3, 2024",Miðvikudagur,Deadlift,Leg Day,65,lbs,29,kg,12,3,Glutes,Hamstrings,"Lower Back, Quadriceps"
+"July 3, 2024",Miðvikudagur,Leg Extension Machine,Leg Day,50,lbs,23,kg,12,2,Quadriceps,,
+"July 3, 2024",Miðvikudagur,Leg Extension Machine,Leg Day,60,lbs,27,kg,12,2,Quadriceps,,
+"July 3, 2024",Miðvikudagur,Leg Curl Machine,Leg Day,80,lbs,36,kg,12,3,Hamstrings,Calves,
+"July 3, 2024",Miðvikudagur,Hip Abduction Machine,Leg Day,90,lbs,41,kg,12,3,Gluteus Medius,Gluteus Minimus,
+"July 3, 2024",Miðvikudagur,Hip Adduction Machine,Leg Day,90,lbs,41,kg,12,1,Adductors,,
+"July 3, 2024",Miðvikudagur,Hip Adduction Machine,Leg Day,80,lbs,36,kg,12,2,Adductors,,
+"July 3, 2024",Miðvikudagur,Left Calf Raises,Leg Day,0,lbs,0,kg,20,3,Gastrocnemius,Soleus,
+"July 3, 2024",Miðvikudagur,Right Calf Raises,Leg Day,0,lbs,0,kg,20,3,Gastrocnemius,Soleus,
+"July 5, 2024",Föstudagur,Lat Pulldown Cable,Back/Biceps,20,lbs,9,kg,12,1,Latissimus Dorsi,Biceps,Rear Deltoids
+"July 5, 2024",Föstudagur,Lat Pulldown Cable,Back/Biceps,35,lbs,16,kg,15,2,Latissimus Dorsi,Biceps,Rear Deltoids
+"July 5, 2024",Föstudagur,Lat Pulldown Cable,Back/Biceps,43,lbs,19,kg,12,2,Latissimus Dorsi,Biceps,Rear Deltoids
+"July 5, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 5, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,25,lbs,11,kg,15,2,Middle Back,Biceps,Lats
+"July 5, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 5, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 5, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,25,lbs,11,kg,15,2,Middle Back,Biceps,Lats
+"July 5, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 5, 2024",Föstudagur,Bicep Curls (Curved Barbells),Back/Biceps,40,lbs,18,kg,15,4,Biceps,Forearms,
+"July 5, 2024",Föstudagur,Face Pulls (Cables),Back/Biceps,25,lbs,11,kg,15,1,Rear Deltoids,Trapezius,Rhomboids
+"July 5, 2024",Föstudagur,Face Pulls (Cables),Back/Biceps,30,lbs,14,kg,12,3,Rear Deltoids,Trapezius,Rhomboids
+"July 5, 2024",Föstudagur,Seated Cable Rows (Dual Pulley Row),Back/Biceps,35,lbs,16,kg,12,3,Middle Back,Lats,Biceps
+"July 5, 2024",Föstudagur,Rear Delt Flyes Machine,Back/Biceps,50,lbs,23,kg,12,3,Rear Deltoids,Trapezius,
+"July 5, 2024",Föstudagur,Dumbbell Hammer Curls,Back/Biceps,20,lbs,9,kg,10,1,Biceps,Brachialis,Forearms
+"July 5, 2024",Föstudagur,Dumbbell Hammer Curls,Back/Biceps,15,lbs,7,kg,12,2,Biceps,Brachialis,Forearms
+"July 8, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,45,lbs,20,kg,15,1,Pectorals,Triceps,Anterior Deltoids
+"July 8, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,95,lbs,43,kg,12,1,Pectorals,Triceps,Anterior Deltoids
+"July 8, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,95,lbs,43,kg,10,1,Pectorals,Triceps,Anterior Deltoids
+"July 8, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,45,lbs,20,kg,20,2,Pectorals,Triceps,Anterior Deltoids
+"July 8, 2024",Mánudagur,Shoulder Press,Chest/Shoulders/Triceps,45,lbs,20,kg,12,3,Deltoids,Triceps,
+"July 8, 2024",Mánudagur,Incline Dumbbell Press,Chest/Shoulders/Triceps,40,lbs,18,kg,12,1,Upper Pectorals,Deltoids,Triceps
+"July 8, 2024",Mánudagur,Incline Dumbbell Press,Chest/Shoulders/Triceps,50,lbs,23,kg,12,2,Upper Pectorals,Deltoids,Triceps
+"July 8, 2024",Mánudagur,Tricep Pushdowns,Chest/Shoulders/Triceps,60,lbs,27,kg,12,1,Triceps,,
+"July 8, 2024",Mánudagur,Tricep Pushdowns,Chest/Shoulders/Triceps,80,lbs,36,kg,12,3,Triceps,,
+"July 8, 2024",Mánudagur,Lateral Raises Dumbbell,Chest/Shoulders/Triceps,50,lbs,23,kg,12,1,Deltoids,,
+"July 8, 2024",Mánudagur,Lateral Raises Dumbbell,Chest/Shoulders/Triceps,40,lbs,18,kg,12,3,Deltoids,,
+"July 8, 2024",Mánudagur,Cable Arm Extension,Chest/Shoulders/Triceps,30,lbs,14,kg,12,1,Triceps,,
+"July 8, 2024",Mánudagur,Cable Arm Extension,Chest/Shoulders/Triceps,35,lbs,16,kg,12,2,Triceps,,
+"July 8, 2024",Mánudagur,Pectoral Fly Machine,Chest/Shoulders/Triceps,70,lbs,32,kg,12,2,Pectorals,,
+"July 8, 2024",Mánudagur,Pectoral Fly Machine,Chest/Shoulders/Triceps,60,lbs,27,kg,12,1,Pectorals,,
+"July 10, 2024",Miðvikudagur,Squat,Legs,45,lbs,20,kg,12,1,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 10, 2024",Miðvikudagur,Squat,Legs,95,lbs,43,kg,12,1,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 10, 2024",Miðvikudagur,Squat,Legs,95,lbs,43,kg,10,2,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 10, 2024",Miðvikudagur,Squat,Legs,45,lbs,20,kg,12,1,Quadriceps,Glutes,"Hamstrings, Lower Back"
+"July 10, 2024",Miðvikudagur,Deadlift,Legs,95,lbs,43,kg,12,3,Glutes,Hamstrings,"Lower Back, Quadriceps"
+"July 10, 2024",Miðvikudagur,Leg Extension Machine,Legs,60,lbs,27,kg,15,1,Quadriceps,,
+"July 10, 2024",Miðvikudagur,Leg Extension Machine,Legs,80,lbs,36,kg,12,3,Quadriceps,,
+"July 10, 2024",Miðvikudagur,Leg Curl Machine,Legs,80,lbs,36,kg,12,4,Hamstrings,Calves,
+"July 10, 2024",Miðvikudagur,Hip Abduction Machine,Legs,90,lbs,41,kg,12,3,Gluteus Medius,Gluteus Minimus,
+"July 10, 2024",Miðvikudagur,Hip Adduction Machine,Legs,90,lbs,41,kg,12,3,Adductors,,
+"July 10, 2024",Miðvikudagur,Left Calf Raises,Legs,0,lbs,0,kg,20,3,Gastrocnemius,Soleus,
+"July 10, 2024",Miðvikudagur,Right Calf Raises,Legs,0,lbs,0,kg,20,3,Gastrocnemius,Soleus,
+"July 12, 2024",Föstudagur,Lat Pulldown Cable,Back/Biceps,43,lbs,19,kg,12,3,Latissimus Dorsi,Biceps,Rear Deltoids
+"July 12, 2024",Föstudagur,Lat Pulldown Cable,Back/Biceps,50,lbs,23,kg,8,1,Latissimus Dorsi,Biceps,Rear Deltoids
+"July 12, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,28,lbs,12,kg,15,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,28,lbs,12,kg,12,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Right Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,28,lbs,12,kg,15,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,28,lbs,12,kg,12,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Dumbbell Row Left Arm,Back/Biceps,25,lbs,11,kg,12,1,Middle Back,Biceps,Lats
+"July 12, 2024",Föstudagur,Bicep Curls (Curved Barbells),Back/Biceps,40,lbs,18,kg,15,3,Biceps,Forearms,
+"July 12, 2024",Föstudagur,Bicep Curls (Curved Barbells),Back/Biceps,50,lbs,23,kg,12,1,Biceps,Forearms,
+"July 12, 2024",Föstudagur,Face Pulls (Cables),Back/Biceps,30,lbs,14,kg,12,4,Rear Deltoids,Trapezius,Rhomboids
+"July 12, 2024",Föstudagur,Right Arm Hammer Curls Cables,Back/Biceps,15,lbs,7,kg,12,1,Biceps,Forearms,Brachialis
+"July 12, 2024",Föstudagur,Right Arm Hammer Curls Cables,Back/Biceps,10,lbs,5,kg,15,2,Biceps,Forearms,Brachialis
+"July 12, 2024",Föstudagur,Left Arm Hammer Curls Cables,Back/Biceps,15,lbs,7,kg,12,1,Biceps,Forearms,Brachialis
+"July 12, 2024",Föstudagur,Left Arm Hammer Curls Cables,Back/Biceps,10,lbs,5,kg,15,2,Biceps,Forearms,Brachialis
+"July 12, 2024",Föstudagur,Seated Cable Rows (Single Pulley Row),Back/Biceps,70,lbs,32,kg,12,1,Middle Back,Lats,Biceps
+"July 12, 2024",Föstudagur,Seated Cable Rows (Single Pulley Row),Back/Biceps,85,lbs,39,kg,12,3,Middle Back,Lats,Biceps
+"July 12, 2024",Föstudagur,Rear Delt Flyes Machine,Back/Biceps,60,lbs,27,kg,12,3,Rear Deltoids,Trapezius,
+"July 15, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,45,lbs,20,kg,12,1,Pectorals,Triceps,Anterior Deltoids
+"July 15, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,95,lbs,43,kg,12,2,Pectorals,Triceps,Anterior Deltoids
+"July 15, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,95,lbs,43,kg,9,1,Pectorals,Triceps,Anterior Deltoids
+"July 15, 2024",Mánudagur,Bench Press,Chest/Shoulders/Triceps,45,lbs,20,kg,20,1,Pectorals,Triceps,Anterior Deltoids
+"July 15, 2024",Mánudagur,Shoulder Press,Chest/Shoulders/Triceps,55,lbs,25,kg,12,1,Deltoids,Triceps,
+"July 15, 2024",Mánudagur,Shoulder Press,Chest/Shoulders/Triceps,45,lbs,20,kg,12,2,Deltoids,Triceps,
+"July 15, 2024",Mánudagur,Incline Dumbbell Press,Chest/Shoulders/Triceps,40,lbs,18,kg,12,1,Upper Pectorals,Deltoids,Triceps
+"July 15, 2024",Mánudagur,Incline Dumbbell Press,Chest/Shoulders/Triceps,50,lbs,23,kg,12,3,Upper Pectorals,Deltoids,Triceps
+"July 15, 2024",Mánudagur,Cable Arm Extension,Chest/Shoulders/Triceps,35,lbs,16,kg,12,1,Triceps,,
+"July 15, 2024",Mánudagur,Cable Arm Extension,Chest/Shoulders/Triceps,40,lbs,18,kg,12,2,Triceps,,
+"July 15, 2024",Mánudagur,Tricep Pushdowns,Chest/Shoulders/Triceps,80,lbs,36,kg,12,1,Triceps,,
+"July 15, 2024",Mánudagur,Tricep Pushdowns,Chest/Shoulders/Triceps,70,lbs,32,kg,12,2,Triceps,,
+"July 15, 2024",Mánudagur,Lateral Raises Dumbbell,Chest/Shoulders/Triceps,45,lbs,20,kg,12,3,Deltoids,,
+"July 15, 2024",Mánudagur,Pectoral Dumbbell Flyes,Chest/Shoulders/Triceps,40,lbs,18,kg,12,3,Pectorals,,
