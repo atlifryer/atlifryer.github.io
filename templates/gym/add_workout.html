@@ -7,21 +7,31 @@
 <script>
     $(document).ready(function () {
         // Load exercises based on selected workout day
-        $('#id_workout_day').change(function () {
+        function loadExercises(workoutDay, selectedExercise) {
             var url = "{% url 'ajax_load_exercises' %}";
-            var workoutDay = $(this).val();
             $.ajax({
                 url: url,
                 data: { 'workout_day': workoutDay },
                 success: function (data) {
-                    $("#id_exercise").html(data).trigger('change');  // Trigger change to load last workout details
+                    $("#id_exercise").html(data);
+                    if (selectedExercise) {
+                        $('#id_exercise').val(selectedExercise);
+                    }
+                    $('#id_exercise').trigger('change');
                 }
             });
+        }
+
+        $('#id_workout_day').change(function () {
+            var workoutDay = $(this).val();
+            localStorage.setItem('selectedWorkoutDay', workoutDay);  // Save selected workout day to local storage
+            loadExercises(workoutDay, null);
         });
 
         // Load last workout details when an exercise is selected
         $('#id_exercise').change(function () {
             var exerciseId = $(this).val();
+            localStorage.setItem('selectedExercise', exerciseId);  // Save selected exercise to local storage
             var url = "{% url 'last_workout_details' %}";
             if (!exerciseId) return;  // Prevent fetching if no exercise is selected
 
@@ -46,11 +56,17 @@
             });
         });
 
-        // Trigger exercise details fetch for the default selected exercise on page load
-        $('#id_exercise').trigger('change');
+        // Retrieve and set saved values from local storage on page load
+        var savedWorkoutDay = localStorage.getItem('selectedWorkoutDay');
+        var savedExercise = localStorage.getItem('selectedExercise');
+        if (savedWorkoutDay) {
+            $('#id_workout_day').val(savedWorkoutDay);
+            loadExercises(savedWorkoutDay, savedExercise);
+        } else {
+            $('#id_exercise').trigger('change');
+        }
     });
 </script>
-
 
 <form method="post">
     {% csrf_token %}

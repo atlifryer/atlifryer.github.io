@@ -7,7 +7,7 @@ from .forms import WorkoutForm
 from .models import Exercise, Workout
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import JsonResponse
-from django.db.models import Max
+from django.db.models import Max, Q
 
 @staff_member_required
 def last_workout_details(request):
@@ -15,12 +15,20 @@ def last_workout_details(request):
     if not exercise_id:
         return JsonResponse({'error': 'No exercise specified'}, status=400)
 
-    latest_date = Workout.objects.filter(exercise_id=exercise_id).aggregate(Max('date_time'))['date_time__max']
+    today = timezone.localdate()
+
+    latest_date = Workout.objects.filter(
+        exercise_id=exercise_id,
+        date_time__date__lt=today
+    ).aggregate(Max('date_time'))['date_time__max']
 
     if not latest_date:
         return JsonResponse({'error': 'No workouts found for this exercise'}, status=404)
 
-    workouts = Workout.objects.filter(exercise_id=exercise_id, date_time__date=latest_date.date()).order_by('date_time')
+    workouts = Workout.objects.filter(
+        exercise_id=exercise_id, 
+        date_time__date=latest_date.date()
+    ).order_by('date_time')
 
     last_workout_day = format(timezone.localtime(latest_date), 'l, F jS')
     workouts_data = [{
